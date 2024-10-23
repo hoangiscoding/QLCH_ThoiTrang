@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6707A80-B7E3-4BCB-90C1-33C9C3B10883}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Views</RootNamespace>
+    <AssemblyName>Views</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.TimeProvider, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.TimeProvider.8.0.1\lib\net462\Microsoft.Bcl.TimeProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=8.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.8.1.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=8.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.8.1.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=8.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.8.1.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=8.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.8.1.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=8.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.8.1.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=6.16.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.6.16.1\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillCreateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillCreateFrm.Designer.cs">
+      <DependentUpon>BillCreateFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillInfoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillInfoFrm.Designer.cs">
+      <DependentUpon>BillInfoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordFrm.Designer.cs">
+      <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerInfo_CreateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerInfo_CreateFrm.Designer.cs">
+      <DependentUpon>CustomerInfo_CreateFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportGoodCreateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportGoodCreateFrm.Designer.cs">
+      <DependentUpon>ImportGoodCreateFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportGoodInfoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportGoodInfoFrm.Designer.cs">
+      <DependentUpon>ImportGoodInfoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItBillInfoMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItBillInfoMain.Designer.cs">
+      <DependentUpon>ItBillInfoMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItCustomerInfo.Designer.cs">
+      <DependentUpon>ItCustomerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItImportGoodInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItImportGoodInfo.Designer.cs">
+      <DependentUpon>ItImportGoodInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItImportGoodMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItImportGoodMain.Designer.cs">
+      <DependentUpon>ItImportGoodMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelCustomer.Designer.cs">
+      <DependentUpon>ItPanelCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelHome.Designer.cs">
+      <DependentUpon>ItPanelHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelBill.Designer.cs">
+      <DependentUpon>ItPanelBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelImportGood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelImportGood.Designer.cs">
+      <DependentUpon>ItPanelImportGood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelManage.Designer.cs">
+      <DependentUpon>ItPanelManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelProduct.Designer.cs">
+      <DependentUpon>ItPanelProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItBillInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItBillInfo.Designer.cs">
+      <DependentUpon>ItBillInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItPanelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItPanelSetting.Designer.cs">
+      <DependentUpon>ItPanelSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItProductInBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItProductInBill.Designer.cs">
+      <DependentUpon>ItProductInBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItProductInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItProductInfo.Designer.cs">
+      <DependentUpon>ItProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItStaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItStaffInfo.Designer.cs">
+      <DependentUpon>ItStaffInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInfo_CreateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductInfo_CreateFrm.Designer.cs">
+      <DependentUpon>ProductInfo_CreateFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterFrm.Designer.cs">
+      <DependentUpon>RegisterFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeFrm.Designer.cs">
+      <DependentUpon>HomeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectImageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectImageFrm.Designer.cs">
+      <DependentUpon>SelectImageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffInfo_CreateFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffInfo_CreateFrm.Designer.cs">
+      <DependentUpon>StaffInfo_CreateFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BillCreateFrm.resx">
+      <DependentUpon>BillCreateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillInfoFrm.resx">
+      <DependentUpon>BillInfoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordFrm.resx">
+      <DependentUpon>ChangePasswordFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerInfo_CreateFrm.resx">
+      <DependentUpon>CustomerInfo_CreateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportGoodCreateFrm.resx">
+      <DependentUpon>ImportGoodCreateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportGoodInfoFrm.resx">
+      <DependentUpon>ImportGoodInfoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItBillInfoMain.resx">
+      <DependentUpon>ItBillInfoMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItCustomerInfo.resx">
+      <DependentUpon>ItCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItImportGoodInfo.resx">
+      <DependentUpon>ItImportGoodInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItImportGoodMain.resx">
+      <DependentUpon>ItImportGoodMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelCustomer.resx">
+      <DependentUpon>ItPanelCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelHome.resx">
+      <DependentUpon>ItPanelHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelBill.resx">
+      <DependentUpon>ItPanelBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelImportGood.resx">
+      <DependentUpon>ItPanelImportGood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelManage.resx">
+      <DependentUpon>ItPanelManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelProduct.resx">
+      <DependentUpon>ItPanelProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItBillInfo.resx">
+      <DependentUpon>ItBillInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItPanelSetting.resx">
+      <DependentUpon>ItPanelSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItProductInBill.resx">
+      <DependentUpon>ItProductInBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItProductInfo.resx">
+      <DependentUpon>ItProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItStaffInfo.resx">
+      <DependentUpon>ItStaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductInfo_CreateFrm.resx">
+      <DependentUpon>ProductInfo_CreateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegisterFrm.resx">
+      <DependentUpon>RegisterFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeFrm.resx">
+      <DependentUpon>HomeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectImageFrm.resx">
+      <DependentUpon>SelectImageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffInfo_CreateFrm.resx">
+      <DependentUpon>StaffInfo_CreateFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controllers\Controllers.csproj">
+      <Project>{4ee8b40a-85b0-49aa-a13c-51ce5ea20c84}</Project>
+      <Name>Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{1149126d-d967-4e49-a247-bf68c8ca90f9}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+</Project>
