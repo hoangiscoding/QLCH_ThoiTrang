@@ -1,6 +1,0 @@
-them khuyến mại trong đơn hang
-text số lượng trong đơn hang
-trỏ chuột trong thông tin khách hàng/khách hang
-tìm kiếm theo năm sinh, giới tính, *chức vụ trong quản lý
-thêm doanh thu
-sửa layout
