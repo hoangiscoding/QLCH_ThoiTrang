@@ -82,7 +82,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label6.Location = new System.Drawing.Point(589, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 32);
+            this.label6.Size = new System.Drawing.Size(71, 28);
             this.label6.TabIndex = 3;
             this.label6.Text = "Trị giá";
             // 
@@ -93,7 +93,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label5.Location = new System.Drawing.Point(380, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 32);
+            this.label5.Size = new System.Drawing.Size(62, 28);
             this.label5.TabIndex = 2;
             this.label5.Text = "Ngày";
             // 
@@ -104,7 +104,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label4.Location = new System.Drawing.Point(102, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 32);
+            this.label4.Size = new System.Drawing.Size(123, 28);
             this.label4.TabIndex = 1;
             this.label4.Text = "Khách hàng";
             // 
@@ -115,7 +115,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label3.Location = new System.Drawing.Point(14, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 32);
+            this.label3.Size = new System.Drawing.Size(71, 28);
             this.label3.TabIndex = 0;
             this.label3.Text = "Số HĐ";
             // 
@@ -162,7 +162,7 @@
             this.txtBillFind.ForeColor = System.Drawing.Color.DarkGray;
             this.txtBillFind.Location = new System.Drawing.Point(20, 20);
             this.txtBillFind.Name = "txtBillFind";
-            this.txtBillFind.Size = new System.Drawing.Size(323, 37);
+            this.txtBillFind.Size = new System.Drawing.Size(323, 31);
             this.txtBillFind.TabIndex = 5;
             this.txtBillFind.Text = "Tìm kiếm:";
             this.txtBillFind.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBillFind_MouseClick);
@@ -187,7 +187,7 @@
             "Ngày"});
             this.comboBillFind.Location = new System.Drawing.Point(6, 31);
             this.comboBillFind.Name = "comboBillFind";
-            this.comboBillFind.Size = new System.Drawing.Size(252, 36);
+            this.comboBillFind.Size = new System.Drawing.Size(252, 31);
             this.comboBillFind.TabIndex = 1;
             // 
             // label2
@@ -196,7 +196,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 30);
+            this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tìm kiếm:";
             // 
@@ -207,13 +207,13 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(4, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 54);
+            this.label1.Size = new System.Drawing.Size(202, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐƠN HÀNG";
             // 
             // ItPanelBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 786);
             this.Controls.Add(this.panelBill);

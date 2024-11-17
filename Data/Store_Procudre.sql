@@ -673,21 +673,18 @@ END;
 
 --Tìm đơn hàng theo tên KH
 CREATE PROC FindBillByCustomerName
-	@Name nvarchar(50)
+    @Name nvarchar(50)
 AS 
 BEGIN
-	SELECT 
-		Id, CustomerId,StaffId,CreationTime,DiscountAmount,OriginalPrice,DiscountedTotal
-	FROM 
-		Bill
-	WHERE 
-		StaffId 
-		IN 
-		(
-		SELECT Id
-		FROM Staff
-		WHERE Staff.FullName LIKE '%' + @Name + '%'
-		)
+    SELECT 
+        B.Id, B.CustomerId, B.StaffId, B.CreationTime, 
+        B.DiscountAmount, B.OriginalPrice, B.DiscountedTotal
+    FROM 
+        Bill B
+    INNER JOIN 
+        Customer C ON B.CustomerId = C.Id
+    WHERE 
+        C.FullName LIKE '%' + @Name + '%'
 END;
 -- Tìm đơn hàng theo ngày nhập
 CREATE PROC FindBillByDate

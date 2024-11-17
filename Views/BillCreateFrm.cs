@@ -253,26 +253,22 @@ namespace Views
                 }
                 else
                 {
-                    // Khởi tạo form CustomerInfo_CreateFrm và truyền số điện thoại
                     var customerForm = new CustomerInfo_CreateFrm
                     {
-                        StartPosition = FormStartPosition.CenterParent // Đặt vị trí form hiển thị ở giữa parent
+                        StartPosition = FormStartPosition.CenterParent
                     };
 
-                    // Kiểm tra nếu form có thuộc tính hoặc phương thức để nhận số điện thoại
                     if (customerForm.Controls.Find("txtCustomerPhone", true).FirstOrDefault() is TextBox txtCustomerPhone)
                     {
-                        txtCustomerPhone.Text = phoneNumber; // Truyền số điện thoại vào txtCustomerPhone
+                        txtCustomerPhone.Text = phoneNumber;
                         txtCustomerPhone.Enabled = false;
                     }
 
                     customerForm.ShowDialog();
 
-                    // Cập nhật danh sách khách hàng và comboBox sau khi đóng form
                     customers = customerController.LoadAllCustomer();
                     FillCustomerIntoComboCustomer();
 
-                    // Kiểm tra lại khách hàng sau khi thêm
                     customer = FindCustomerByPhone(customers, phoneNumber);
                     if (customer != null)
                     {
