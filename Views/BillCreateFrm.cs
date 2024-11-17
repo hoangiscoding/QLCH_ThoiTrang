@@ -242,6 +242,15 @@ namespace Views
             FillCustomerIntoComboCustomer();
             currId = billController.GetCurrId(bills) + 1;
             txtBillId.Text = "BI" + currId;
+            string userId = UserInfo.UserId;
+            string userName = UserInfo.UserName;
+            comboStaff.Text = $"{userId} | {userName}";
+            if (staff != null)
+            {
+
+                comboStaff.SelectedItem = $"{staff.Id} | {staff.Name}";
+                comboStaff.Enabled = false;
+            }
         }
 
         private void FillCustomerIntoComboCustomer()

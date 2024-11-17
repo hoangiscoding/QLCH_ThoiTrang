@@ -1,8 +1,10 @@
 ﻿using Controllers;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -65,6 +67,8 @@ namespace Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string userName = txtAccount.Text;
+            string passWord = txtPassword.Text;
             string role;
             if (checkBoxManager.Checked)
             {
@@ -75,13 +79,38 @@ namespace Views
             var staff = staffController.CheckLogin(txtAccount.Text, txtPassword.Text, role);
             if (staff != null)
             {
-                HomeFrm f = new HomeFrm(staff);
-                f.ShowDialog();
+                using (SqlConnection connect = new SqlConnection("Data source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True"))
+                {
+                    connect.Open();
+                    string sql = "select Id, Username from Staff where Username = @userName and Password = @passWord";
+                    SqlCommand cmd = new SqlCommand(sql, connect);
+                    cmd.Parameters.AddWithValue("@userName", userName);
+                    cmd.Parameters.AddWithValue("@passWord", passWord);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        // Lấy thông tin mã nhân viên và tên nhân viên
+                        string maNhanVien = reader["Id"].ToString();
+                        string tenNhanVien = reader["Username"].ToString();
+                        UserInfo.UserId = maNhanVien;
+                        UserInfo.UserName = tenNhanVien;
+
+                        HomeFrm f = new HomeFrm(staff);
+                        f.ShowDialog();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thông tin tài khoản hoặc mật khẩu không chính xác!",
+                        "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    }
+                }
+
             }
             else
             {
                 MessageBox.Show("Thông tin tài khoản hoặc mật khẩu không chính xác!",
-                    "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
 
         }

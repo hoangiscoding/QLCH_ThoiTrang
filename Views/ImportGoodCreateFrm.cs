@@ -78,6 +78,15 @@ namespace Views
             FillProductIntoComboProduct();
             currId = imController.GetCurrId(importGoods) + 1;
             txtImportGoodId.Text = "IM" + currId;
+            string userId = UserInfo.UserId;
+            string userName = UserInfo.UserName;
+            comboIdNameStaff.Text = $"{userId} | {userName}";
+            if (staff != null)
+            {
+
+                comboIdNameStaff.SelectedItem = $"{staff.Id} | {staff.Name}";
+                comboIdNameStaff.Enabled = false;
+            }
         }
 
         private void FillProductIntoComboProduct()

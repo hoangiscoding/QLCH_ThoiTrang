@@ -76,7 +76,7 @@
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(709, 13);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(113, 23);
+            this.label23.Size = new System.Drawing.Size(142, 30);
             this.label23.TabIndex = 12;
             this.label23.Text = "THÀNH TIỀN";
             // 
@@ -86,7 +86,7 @@
             this.label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(406, 13);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 23);
+            this.label21.Size = new System.Drawing.Size(56, 30);
             this.label21.TabIndex = 10;
             this.label21.Text = "SIZE";
             // 
@@ -96,7 +96,7 @@
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(167, 13);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 23);
+            this.label20.Size = new System.Drawing.Size(84, 30);
             this.label20.TabIndex = 9;
             this.label20.Text = "TÊN SP";
             // 
@@ -106,17 +106,18 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(18, 13);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 23);
+            this.label19.Size = new System.Drawing.Size(79, 30);
             this.label19.TabIndex = 8;
             this.label19.Text = "MÃ SP";
             // 
             // comboIdNameStaff
             // 
+            this.comboIdNameStaff.Enabled = false;
             this.comboIdNameStaff.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboIdNameStaff.FormattingEnabled = true;
             this.comboIdNameStaff.Location = new System.Drawing.Point(17, 71);
             this.comboIdNameStaff.Name = "comboIdNameStaff";
-            this.comboIdNameStaff.Size = new System.Drawing.Size(407, 31);
+            this.comboIdNameStaff.Size = new System.Drawing.Size(407, 36);
             this.comboIdNameStaff.TabIndex = 9;
             this.comboIdNameStaff.SelectedIndexChanged += new System.EventHandler(this.comboIdNameStaff_SelectedIndexChanged);
             // 
@@ -126,7 +127,7 @@
             this.label22.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(587, 13);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(29, 23);
+            this.label22.Size = new System.Drawing.Size(36, 30);
             this.label22.TabIndex = 11;
             this.label22.Text = "SL";
             // 
@@ -145,7 +146,7 @@
             this.txtTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.Location = new System.Drawing.Point(5, 5);
             this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(163, 23);
+            this.txtTime.Size = new System.Drawing.Size(199, 30);
             this.txtTime.TabIndex = 3;
             this.txtTime.Text = "01/01/2024 07:03:22";
             // 
@@ -155,7 +156,7 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(21, 114);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 23);
+            this.label14.Size = new System.Drawing.Size(124, 30);
             this.label14.TabIndex = 6;
             this.label14.Text = "THỜI GIAN";
             // 
@@ -165,7 +166,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(18, 39);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 23);
+            this.label9.Size = new System.Drawing.Size(181, 30);
             this.label9.TabIndex = 1;
             this.label9.Text = "MÃ NV | TÊN NV";
             // 
@@ -175,7 +176,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(131, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(188, 28);
+            this.label8.Size = new System.Drawing.Size(226, 32);
             this.label8.TabIndex = 0;
             this.label8.Text = "THÔNG TIN PHIẾU";
             // 
@@ -214,7 +215,7 @@
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.Location = new System.Drawing.Point(15, 227);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(407, 30);
+            this.txtQuantity.Size = new System.Drawing.Size(407, 35);
             this.txtQuantity.TabIndex = 0;
             // 
             // btnRemoveImportGood
@@ -264,7 +265,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(5, 4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(0, 23);
+            this.txtPrice.Size = new System.Drawing.Size(0, 30);
             this.txtPrice.TabIndex = 3;
             // 
             // comboIdNameSizeQuantityProduct
@@ -273,7 +274,7 @@
             this.comboIdNameSizeQuantityProduct.FormattingEnabled = true;
             this.comboIdNameSizeQuantityProduct.Location = new System.Drawing.Point(15, 72);
             this.comboIdNameSizeQuantityProduct.Name = "comboIdNameSizeQuantityProduct";
-            this.comboIdNameSizeQuantityProduct.Size = new System.Drawing.Size(407, 31);
+            this.comboIdNameSizeQuantityProduct.Size = new System.Drawing.Size(407, 36);
             this.comboIdNameSizeQuantityProduct.TabIndex = 8;
             this.comboIdNameSizeQuantityProduct.SelectedIndexChanged += new System.EventHandler(this.comboIdNameSizeQuantityProduct_SelectedIndexChanged);
             // 
@@ -283,7 +284,7 @@
             this.label24.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(18, 191);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(98, 23);
+            this.label24.Size = new System.Drawing.Size(122, 30);
             this.label24.TabIndex = 6;
             this.label24.Text = "SỐ LƯỢNG";
             // 
@@ -293,7 +294,7 @@
             this.label25.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(18, 115);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(197, 23);
+            this.label25.Size = new System.Drawing.Size(245, 30);
             this.label25.TabIndex = 4;
             this.label25.Text = "ĐƠN GIÁ /  SẢN PHẨM";
             // 
@@ -303,7 +304,7 @@
             this.label27.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(18, 39);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(280, 23);
+            this.label27.Size = new System.Drawing.Size(347, 30);
             this.label27.TabIndex = 1;
             this.label27.Text = "MÃ SP | TÊN SP | SIZE | TỒN KHO";
             // 
@@ -313,7 +314,7 @@
             this.label28.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(153, 4);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(156, 28);
+            this.label28.Size = new System.Drawing.Size(189, 32);
             this.label28.TabIndex = 0;
             this.label28.Text = "CHI TIẾT PHIẾU";
             // 
@@ -323,7 +324,7 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(21, 190);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 23);
+            this.label16.Size = new System.Drawing.Size(109, 30);
             this.label16.TabIndex = 6;
             this.label16.Text = "SỐ PHIẾU";
             // 
@@ -341,7 +342,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(337, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 45);
+            this.label1.Size = new System.Drawing.Size(399, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "PHIẾU NHẬP HÀNG";
             // 
@@ -376,7 +377,7 @@
             this.txtImportGoodId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImportGoodId.Location = new System.Drawing.Point(5, 5);
             this.txtImportGoodId.Name = "txtImportGoodId";
-            this.txtImportGoodId.Size = new System.Drawing.Size(19, 23);
+            this.txtImportGoodId.Size = new System.Drawing.Size(24, 30);
             this.txtImportGoodId.TabIndex = 3;
             this.txtImportGoodId.Text = "1";
             // 
@@ -426,7 +427,7 @@
             // 
             // ImportGoodCreateFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 800);
             this.Controls.Add(this.panel1);
