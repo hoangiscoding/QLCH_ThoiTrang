@@ -98,7 +98,7 @@
             this.txtCustomerName.Location = new System.Drawing.Point(365, 159);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(254, 30);
-            this.txtCustomerName.TabIndex = 5;
+            this.txtCustomerName.TabIndex = 1;
             // 
             // label3
             // 

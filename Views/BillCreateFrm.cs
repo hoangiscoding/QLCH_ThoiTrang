@@ -42,7 +42,7 @@ namespace Views
         {
             if (IsBillExist(txtBillId.Text))
             {
-                //Bill đã được tạo thì tiến hành update thôi
+                //Bill đã được tạo thì tiến hành update
                 BillUpdate();
             }
             else
@@ -234,6 +234,57 @@ namespace Views
                 comboStaff.Items.Add($"{staffItem.Id} | {staffItem.Name}");
             }
         }
+        private void TextNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string phoneNumber = textNumber.Text.Trim();
+                if (string.IsNullOrEmpty(phoneNumber))
+                {
+                    MessageBox.Show("Vui lòng nhập số điện thoại khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var customer = FindCustomerByPhone(customers, phoneNumber);
+
+                if (customer != null)
+                {
+                    comboCustomer.Text = $"{customer.Id} | {customer.Name}";
+                }
+                else
+                {
+                    // Khởi tạo form CustomerInfo_CreateFrm và truyền số điện thoại
+                    var customerForm = new CustomerInfo_CreateFrm
+                    {
+                        StartPosition = FormStartPosition.CenterParent // Đặt vị trí form hiển thị ở giữa parent
+                    };
+
+                    // Kiểm tra nếu form có thuộc tính hoặc phương thức để nhận số điện thoại
+                    if (customerForm.Controls.Find("txtCustomerPhone", true).FirstOrDefault() is TextBox txtCustomerPhone)
+                    {
+                        txtCustomerPhone.Text = phoneNumber; // Truyền số điện thoại vào txtCustomerPhone
+                        txtCustomerPhone.Enabled = false;
+                    }
+
+                    customerForm.ShowDialog();
+
+                    // Cập nhật danh sách khách hàng và comboBox sau khi đóng form
+                    customers = customerController.LoadAllCustomer();
+                    FillCustomerIntoComboCustomer();
+
+                    // Kiểm tra lại khách hàng sau khi thêm
+                    customer = FindCustomerByPhone(customers, phoneNumber);
+                    if (customer != null)
+                    {
+                        comboCustomer.Text = $"{customer.Id} | {customer.Name}";
+                    }
+                }
+            }
+        }
+        public Customer FindCustomerByPhone(List<Customer> customers, string phoneNumber)
+        {
+            return customers.FirstOrDefault(c => c.PhoneNumber == phoneNumber);
+        }
 
         private void comboProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -305,8 +356,7 @@ namespace Views
                 discountedAmount);
 
             //Clear dữ liệu
-            comboCustomer.Enabled = true;
-            comboStaff.Enabled = true;
+            textNumber.Text = "";
             comboCustomer.Text = "";
             comboStaff.Text = "";
             comboProduct.Text = "";
@@ -343,5 +393,6 @@ namespace Views
                 billController.CreateNewBillDetail(billDetail);
             }
         }
+
     }
 }
