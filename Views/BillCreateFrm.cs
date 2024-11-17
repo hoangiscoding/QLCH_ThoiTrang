@@ -79,7 +79,7 @@ namespace Views
                 if (success != false)
                 {
                     var billId = txtBillId.Text;
-                    var staffId = GetIdOfCombo(comboStaff.SelectedItem.ToString());
+                    var staffId = GetIdOfCombo(comboStaff.Text.ToString());
                     var customerId = GetIdOfCombo(comboCustomer.SelectedItem.ToString());
 
                     //Tìm đối tượng tương ứng
@@ -104,44 +104,34 @@ namespace Views
         {
             string productId = GetIdOfCombo(comboProduct.SelectedItem.ToString());
 
-            // Kiểm tra nếu sản phẩm đã có trong billDetails
             BillDetail existingBillDetail = billDetails.FirstOrDefault(bd => bd.Product.Id == productId);
 
             if (existingBillDetail != null)
             {
-                // Nếu sản phẩm đã có, cộng dồn số lượng và cập nhật lại tổng
                 existingBillDetail.Quantity += int.Parse(txtQuantity.Text);
                 existingBillDetail.Total = existingBillDetail.Product.Price * existingBillDetail.Quantity;
 
-                // Cập nhật lại giá trị tổng của bill
                 UpdatePriceBill(existingBillDetail.Total, "update");
 
-                // Cập nhật lại UI
-                UpdateBillDetailUI(existingBillDetail);  // Cập nhật UI với BillDetail mới
+                UpdateBillDetailUI(existingBillDetail);
             }
             else
             {
-                // Nếu sản phẩm chưa có, tạo mới BillDetail và thêm vào danh sách
                 BillDetail billDetail = CreateBillDetail(txtBillId.Text, productId, int.Parse(txtQuantity.Text));
                 billDetails.Add(billDetail);
 
-                // Hiển thị lên UI
                 ShowBillDetail(billDetail);
 
-                // Cập nhật giá trị bill
                 UpdatePriceBill(billDetail.Total, "add");
             }
 
-            // Trừ đi số lượng đã thêm từ sản phẩm
             product.Quantity -= int.Parse(txtQuantity.Text);
             productController.UpdateProduct(product);
 
-            // Reset lại các input
             comboProduct.Text = "";
             txtPrice.Text = "";
             txtQuantity.Text = "";
 
-            // Load lại số lượng sản phẩm
             FillProductIntoComboProduct();
         }
         private void UpdateBillDetailUI(BillDetail updatedBillDetail)
@@ -294,26 +284,22 @@ namespace Views
                 }
                 else
                 {
-                    // Khởi tạo form CustomerInfo_CreateFrm và truyền số điện thoại
                     var customerForm = new CustomerInfo_CreateFrm
                     {
-                        StartPosition = FormStartPosition.CenterParent // Đặt vị trí form hiển thị ở giữa parent
+                        StartPosition = FormStartPosition.CenterParent
                     };
 
-                    // Kiểm tra nếu form có thuộc tính hoặc phương thức để nhận số điện thoại
                     if (customerForm.Controls.Find("txtCustomerPhone", true).FirstOrDefault() is TextBox txtCustomerPhone)
                     {
-                        txtCustomerPhone.Text = phoneNumber; // Truyền số điện thoại vào txtCustomerPhone
+                        txtCustomerPhone.Text = phoneNumber;
                         txtCustomerPhone.Enabled = false;
                     }
 
                     customerForm.ShowDialog();
 
-                    // Cập nhật danh sách khách hàng và comboBox sau khi đóng form
                     customers = customerController.LoadAllCustomer();
                     FillCustomerIntoComboCustomer();
 
-                    // Kiểm tra lại khách hàng sau khi thêm
                     customer = FindCustomerByPhone(customers, phoneNumber);
                     if (customer != null)
                     {
@@ -393,10 +379,21 @@ namespace Views
         {
             customerController.UpdatePaymentCustomer(discountedAmount, customer.Id);
             customers = customerController.LoadAllCustomer();
-            billController.PayBill(txtBillId.Text, originalAmount, discountAmount,
-                discountedAmount);
 
-            //Clear dữ liệu
+            billController.PayBill(txtBillId.Text, originalAmount, discountAmount, discountedAmount);
+
+            foreach (var billDetail in billDetails)
+            {
+                billController.CreateNewBillDetail(billDetail);
+            }
+
+            billDetails.Clear();
+
+            ResetForm();
+        }
+
+        private void ResetForm()
+        {
             textNumber.Text = "";
             comboCustomer.Text = "";
             comboProduct.Text = "";
@@ -414,24 +411,10 @@ namespace Views
             txtTotal.Text = GetPriceStr(discountedAmount);
             txtRevenue.Text = "0 VNĐ";
 
-            //update khách hàng
-            customers = customerController.LoadAllCustomer();
-
             flowPanelProductInBill.Controls.Clear();
 
-            //lưu thông tin của billdetails
-            List<BillDetail> newBillDetails = new List<BillDetail>(); // Danh sách tạm thời để lưu trữ các BillDetail mới
-
-            foreach (var billDetail in billDetails)
-            {
-                newBillDetails.Add(billDetail);
-            }
-
-            // Thêm tất cả các BillDetail mới vào cơ sở dữ liệu
-            foreach (var billDetail in newBillDetails)
-            {
-                billController.CreateNewBillDetail(billDetail);
-            }
+            // Load lại dữ liệu khách hàng
+            customers = customerController.LoadAllCustomer();
         }
     }
 }
