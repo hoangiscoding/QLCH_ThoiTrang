@@ -107,31 +107,68 @@ namespace Views
 
         private void BillUpdate()
         {
-            //tạo billdetail -> thêm vào list billdetail, update giá của bill
-            BillDetail billDetail = CreateBillDetail(
-                txtBillId.Text,
-                GetIdOfCombo(comboProduct.SelectedItem.ToString()),
-                int.Parse(txtQuantity.Text)
-                );
+            string productId = GetIdOfCombo(comboProduct.SelectedItem.ToString());
 
-            billDetails.Add(billDetail);
+            // Kiểm tra nếu sản phẩm đã có trong billDetails
+            BillDetail existingBillDetail = billDetails.FirstOrDefault(bd => bd.Product.Id == productId);
 
-            //Show bill detail lên flowpanel
-            ShowBillDetail(billDetail);
-            UpdatePriceBill(billDetail.Total, "add");
+            if (existingBillDetail != null)
+            {
+                // Nếu sản phẩm đã có, cộng dồn số lượng và cập nhật lại tổng
+                existingBillDetail.Quantity += int.Parse(txtQuantity.Text);
+                existingBillDetail.Total = existingBillDetail.Product.Price * existingBillDetail.Quantity;
 
-            //Trừ đi số lượng đã thêm từ sản phẩm
+                // Cập nhật lại giá trị tổng của bill
+                UpdatePriceBill(existingBillDetail.Total, "update");
+
+                // Cập nhật lại UI
+                UpdateBillDetailUI(existingBillDetail);  // Cập nhật UI với BillDetail mới
+            }
+            else
+            {
+                // Nếu sản phẩm chưa có, tạo mới BillDetail và thêm vào danh sách
+                BillDetail billDetail = CreateBillDetail(txtBillId.Text, productId, int.Parse(txtQuantity.Text));
+                billDetails.Add(billDetail);
+
+                // Hiển thị lên UI
+                ShowBillDetail(billDetail);
+
+                // Cập nhật giá trị bill
+                UpdatePriceBill(billDetail.Total, "add");
+            }
+
+            // Trừ đi số lượng đã thêm từ sản phẩm
             product.Quantity -= int.Parse(txtQuantity.Text);
             productController.UpdateProduct(product);
 
-            //reset text thành ""
+            // Reset lại các input
             comboProduct.Text = "";
             txtPrice.Text = "";
             txtQuantity.Text = "";
-            //Load lại số lượng sản phẩm
+
+            // Load lại số lượng sản phẩm
             FillProductIntoComboProduct();
+        }
+        private void UpdateBillDetailUI(BillDetail updatedBillDetail)
+        {
+            // Xóa sản phẩm cũ trong flowPanelProductInBill
+            foreach (Control control in flowPanelProductInBill.Controls)
+            {
+                if (control is ItBillInfo billInfo)
+                {
+                    // Check if the current BillDetail corresponds to the one being updated
+                    if (billInfo.billDetail.Product.Id == updatedBillDetail.Product.Id)
+                    {
+                        // If found, remove the old one
+                        flowPanelProductInBill.Controls.Remove(billInfo);
+                        billInfo.Dispose();
+                        break;
+                    }
+                }
+            }
 
-
+            // Display the updated BillDetail
+            ShowBillDetail(updatedBillDetail);
         }
 
         private void ShowBillDetail(BillDetail billDetail)
@@ -253,22 +290,26 @@ namespace Views
                 }
                 else
                 {
+                    // Khởi tạo form CustomerInfo_CreateFrm và truyền số điện thoại
                     var customerForm = new CustomerInfo_CreateFrm
                     {
-                        StartPosition = FormStartPosition.CenterParent
+                        StartPosition = FormStartPosition.CenterParent // Đặt vị trí form hiển thị ở giữa parent
                     };
 
+                    // Kiểm tra nếu form có thuộc tính hoặc phương thức để nhận số điện thoại
                     if (customerForm.Controls.Find("txtCustomerPhone", true).FirstOrDefault() is TextBox txtCustomerPhone)
                     {
-                        txtCustomerPhone.Text = phoneNumber;
+                        txtCustomerPhone.Text = phoneNumber; // Truyền số điện thoại vào txtCustomerPhone
                         txtCustomerPhone.Enabled = false;
                     }
 
                     customerForm.ShowDialog();
 
+                    // Cập nhật danh sách khách hàng và comboBox sau khi đóng form
                     customers = customerController.LoadAllCustomer();
                     FillCustomerIntoComboCustomer();
 
+                    // Kiểm tra lại khách hàng sau khi thêm
                     customer = FindCustomerByPhone(customers, phoneNumber);
                     if (customer != null)
                     {
@@ -354,7 +395,6 @@ namespace Views
             //Clear dữ liệu
             textNumber.Text = "";
             comboCustomer.Text = "";
-            comboStaff.Text = "";
             comboProduct.Text = "";
             currId++;
             txtBillId.Text = "BI" + currId;

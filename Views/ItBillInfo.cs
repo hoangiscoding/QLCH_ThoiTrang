@@ -14,7 +14,7 @@ namespace Views
 {
     public partial class ItBillInfo : Form
     {
-        private BillDetail billDetail;
+        public BillDetail billDetail;
         public ItBillInfo(BillDetail billDetail)
         {
             InitializeComponent();
