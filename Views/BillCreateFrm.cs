@@ -54,11 +54,6 @@ namespace Views
                     success = false;
                     MessageBox.Show("Vui lòng chọn thông tin khách hàng.");
                 }
-                else if (comboStaff.SelectedIndex == -1)
-                {
-                    success = false;
-                    MessageBox.Show("Vui lòng chọn thông tin nhân viên.");
-                }
                 if (comboProduct.SelectedIndex == -1)
                 {
                     success = false;
@@ -438,6 +433,5 @@ namespace Views
                 billController.CreateNewBillDetail(billDetail);
             }
         }
-
     }
 }

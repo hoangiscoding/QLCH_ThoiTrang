@@ -23,7 +23,7 @@ namespace Controllers
     }
     public class ImportGoodController : IImportGood
     {
-        private string connStr = "Data Source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
+        private string connStr = "Data Source=LAPTOP-DNIFFA8V\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
         private Staff Staff { get; set; }
         private Product Product { get; set; }
         StaffController staffController = new StaffController();
