@@ -94,6 +94,7 @@ namespace Views
                     billController.CreateNewBill(bill);
                 }
 
+                customer.SetRank();
                 //Gọi update bill
                 BillUpdate();
 
