@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Models;
 using Controllers;
 using System.Globalization;
+using Excel = Microsoft.Office.Interop.Excel;
 namespace Views
 {
     public partial class BillCreateFrm : Form
@@ -374,14 +375,105 @@ namespace Views
             return priceFormatted;
         }
 
+        public void PrintBillPay()
+        {
+            if (comboCustomer.Text != "" || txtBillId.Text != "" || flowPanelProductInBill.Controls.Count > 0)
+            {
+
+                Excel.Application exApp = new Excel.Application();
+
+                Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+                Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+                Excel.Range exRange = (Excel.Range)exSheet.Cells[1, 1];
+
+
+                Excel.Range dc = (Excel.Range)exSheet.Cells[2, 1];
+                dc.Font.Size = 13;
+                dc.Font.Color = Color.Blue;
+                dc.Value = "ĐHGTVT - Hà Nội";
+
+                //In chữ Hóa đơn bán
+                exSheet.Range["D4"].Font.Size = 20;
+                exSheet.Range["D4"].Font.Bold = true;
+                exSheet.Range["D4"].Font.Color = Color.Red;
+                exSheet.Range["D4"].Value = "HÓA ĐƠN BÁN HÀNG";
+
+                //In các Thông tin chung
+                exSheet.Range["A5:A8"].Font.Size = 12;
+                exSheet.Range["A5"].Value = "Mã hóa đơn: " + txtBillId.Text;
+                exSheet.Range["A6"].Value = "Khách hàng: " + comboCustomer.Text;
+                exSheet.Range["A7"].Value = "Thời gian: " + txtDateTime.Text;
+                exSheet.Range["A8"].Value = "Khuyến mãi: " + txtDiscountPercent.Text;
+
+
+                //In dòng tiêu đề
+                exSheet.Range["A10:G10"].Font.Size = 12;
+                exSheet.Range["A10:G10"].Font.Bold = true;
+                exSheet.Range["C10"].ColumnWidth = 25;
+                exSheet.Range["G10"].ColumnWidth = 25;
+                exSheet.Range["E10"].ColumnWidth = 20;
+                exSheet.Range["F10"].ColumnWidth = 20;
+                exSheet.Range["B10"].ColumnWidth = 20;
+                exSheet.Range["D10"].ColumnWidth = 20;
+                exSheet.Range["A10"].Value = "STT";
+                exSheet.Range["B10"].Value = "Mã hàng";
+                exSheet.Range["C10"].Value = "Tên hàng";
+                exSheet.Range["D10"].Value = "Số lượng";
+                exSheet.Range["E10"].Value = "Đơn giá bán";
+                exSheet.Range["F10"].Value = "Thành tiền";
+
+                //In ds chi tiết các mặt hàng trong hóa đơn
+                int row = 11;
+                int stt = 1;
+                foreach (Control control in flowPanelProductInBill.Controls)
+                {
+                    if (control is ItBillInfo itBillInfo)
+                    {
+                        exSheet.Range["A" + (row).ToString()].Value = stt.ToString();
+                        exSheet.Range["B" + (row).ToString()].Value = itBillInfo.billDetail.Product.Id.ToString();
+                        exSheet.Range["C" + (row).ToString()].Value = itBillInfo.billDetail.Product.Name.ToString();
+                        exSheet.Range["D" + (row).ToString()].Value = itBillInfo.billDetail.Quantity.ToString();
+                        exSheet.Range["E" + (row).ToString()].Value = itBillInfo.billDetail.Product.Price;
+                        exSheet.Range["F" + (row).ToString()].Value = itBillInfo.billDetail.Total.ToString();
+                        row++;
+                        stt++;
+                    }
+                }
+                exSheet.Range["F" + (row + 1).ToString()].Value = "Tổng tiền: " + txtTotal.Text;
+                exSheet.Range["F" + (row + 2).ToString()].Value = "Nhân viên: " + comboStaff.Text;
+                exSheet.Name = txtBillId.Text;
+                exBook.Activate();
+
+                //Lưu file
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "Excel file Workbook|*.xls|Excel Workbook| *.xlsx|All Files|*.*";
+                save.FilterIndex = 2;
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    exBook.SaveAs(save.FileName.ToLower());
+                    MessageBox.Show("Đã lưu file thành công!");
+                }
+                exApp.Quit();
+            }
+            else
+            {
+                MessageBox.Show("Không đủ thông tin");
+            }
+        }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
+            
             var res = MessageBox.Show("Bạn có chắc chắn muốn thanh toán?",
                 "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
+                var res1 = MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res1 == DialogResult.Yes) {
+                    PrintBillPay();
+                }
                 Payment();
             }
         }

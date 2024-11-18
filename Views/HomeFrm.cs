@@ -95,6 +95,9 @@ namespace Views
             if (result == DialogResult.OK)
             {
                 this.Dispose();
+
+                LoginFrm loginForm = new LoginFrm(); // Tạo instance của LoginFrm
+                loginForm.Show();  // Hiển thị LoginFrm            }
             }
         }
 
