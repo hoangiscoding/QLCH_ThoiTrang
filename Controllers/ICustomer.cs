@@ -24,7 +24,7 @@ namespace Controllers
     }
     public class CustomerController : ICustomer
     {
-        private string connStr = "Data Source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
+        private string connStr = "Data Source=LAPTOP-DNIFFA8V\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
 
         public void CreateNewCustomer(Customer customer)
         {
