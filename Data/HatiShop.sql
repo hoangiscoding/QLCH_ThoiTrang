@@ -1,4 +1,4 @@
-USE [master]
+USE [HatiShop]
 GO
 /****** Object:  Database [HatiShop]    Script Date: 11/18/2024 12:54:00 PM ******/
 CREATE DATABASE [HatiShop]

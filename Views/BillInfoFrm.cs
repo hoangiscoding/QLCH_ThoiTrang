@@ -105,7 +105,7 @@ namespace Views
             return priceFormatted;
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
+        public void PrintBillPay()
         {
             if (txtCustomer.Text != "" || txtBillId.Text != "" || flowPanelProductInBill.Controls.Count > 0)
             {
@@ -189,6 +189,11 @@ namespace Views
             {
                 MessageBox.Show("Không đủ thông tin");
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintBillPay();
         }
     }
 }

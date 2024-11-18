@@ -206,7 +206,7 @@
             this.panel6.Controls.Add(this.label28);
             this.panel6.Location = new System.Drawing.Point(510, 58);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(450, 381);
+            this.panel6.Size = new System.Drawing.Size(450, 382);
             this.panel6.TabIndex = 8;
             // 
             // txtQuantity
@@ -226,7 +226,7 @@
             this.btnRemoveImportGood.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveImportGood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnRemoveImportGood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveImportGood.Location = new System.Drawing.Point(290, 284);
+            this.btnRemoveImportGood.Location = new System.Drawing.Point(258, 284);
             this.btnRemoveImportGood.Name = "btnRemoveImportGood";
             this.btnRemoveImportGood.Size = new System.Drawing.Size(107, 56);
             this.btnRemoveImportGood.TabIndex = 13;
@@ -242,7 +242,7 @@
             this.btnAddEditImportGood.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEditImportGood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnAddEditImportGood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEditImportGood.Location = new System.Drawing.Point(53, 284);
+            this.btnAddEditImportGood.Location = new System.Drawing.Point(46, 284);
             this.btnAddEditImportGood.Name = "btnAddEditImportGood";
             this.btnAddEditImportGood.Size = new System.Drawing.Size(107, 56);
             this.btnAddEditImportGood.TabIndex = 12;

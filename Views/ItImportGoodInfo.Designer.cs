@@ -59,7 +59,7 @@
             this.txtSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtSum.Location = new System.Drawing.Point(706, 13);
             this.txtSum.Name = "txtSum";
-            this.txtSum.Size = new System.Drawing.Size(95, 23);
+            this.txtSum.Size = new System.Drawing.Size(119, 30);
             this.txtSum.TabIndex = 2;
             this.txtSum.Text = "Thành tiền";
             // 
@@ -68,9 +68,9 @@
             this.txtQuantity.AutoSize = true;
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
-            this.txtQuantity.Location = new System.Drawing.Point(584, 13);
+            this.txtQuantity.Location = new System.Drawing.Point(580, 13);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(83, 23);
+            this.txtQuantity.Size = new System.Drawing.Size(103, 30);
             this.txtQuantity.TabIndex = 2;
             this.txtQuantity.Text = "Số lượng";
             // 
@@ -81,7 +81,7 @@
             this.txtProductSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtProductSize.Location = new System.Drawing.Point(403, 13);
             this.txtProductSize.Name = "txtProductSize";
-            this.txtProductSize.Size = new System.Drawing.Size(42, 23);
+            this.txtProductSize.Size = new System.Drawing.Size(52, 30);
             this.txtProductSize.TabIndex = 2;
             this.txtProductSize.Text = "Size";
             // 
@@ -92,7 +92,7 @@
             this.txtProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtProductName.Location = new System.Drawing.Point(164, 13);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(119, 23);
+            this.txtProductName.Size = new System.Drawing.Size(148, 30);
             this.txtProductName.TabIndex = 1;
             this.txtProductName.Text = "Tên sản phẩm";
             // 
@@ -103,13 +103,13 @@
             this.txtProductId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtProductId.Location = new System.Drawing.Point(20, 13);
             this.txtProductId.Name = "txtProductId";
-            this.txtProductId.Size = new System.Drawing.Size(60, 23);
+            this.txtProductId.Size = new System.Drawing.Size(75, 30);
             this.txtProductId.TabIndex = 0;
             this.txtProductId.Text = "Mã SP";
             // 
             // ItImportGoodInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(131)))));
             this.ClientSize = new System.Drawing.Size(920, 50);
