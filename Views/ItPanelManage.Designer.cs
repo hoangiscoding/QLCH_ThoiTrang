@@ -98,7 +98,7 @@
             this.txtStaffFind.ForeColor = System.Drawing.Color.Gray;
             this.txtStaffFind.Location = new System.Drawing.Point(20, 20);
             this.txtStaffFind.Name = "txtStaffFind";
-            this.txtStaffFind.Size = new System.Drawing.Size(330, 37);
+            this.txtStaffFind.Size = new System.Drawing.Size(330, 31);
             this.txtStaffFind.TabIndex = 5;
             this.txtStaffFind.Text = "Tìm kiếm:";
             this.txtStaffFind.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtStaffFind_MouseClick);
@@ -125,8 +125,9 @@
             "Theo chức vụ"});
             this.comboStaffFind.Location = new System.Drawing.Point(6, 31);
             this.comboStaffFind.Name = "comboStaffFind";
-            this.comboStaffFind.Size = new System.Drawing.Size(252, 36);
+            this.comboStaffFind.Size = new System.Drawing.Size(252, 31);
             this.comboStaffFind.TabIndex = 1;
+            this.comboStaffFind.SelectedIndexChanged += new System.EventHandler(this.txtStaffFind_TextChanged);
             // 
             // label4
             // 
@@ -135,7 +136,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 30);
+            this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tìm kiếm:";
             // 
@@ -146,13 +147,13 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
             this.label3.Location = new System.Drawing.Point(4, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(433, 54);
+            this.label3.Size = new System.Drawing.Size(356, 45);
             this.label3.TabIndex = 0;
             this.label3.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
             // ItPanelManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 790);
             this.Controls.Add(this.panelProduct);

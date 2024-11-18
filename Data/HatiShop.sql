@@ -80,3 +80,7 @@ CREATE TABLE UserRoles (
     [Role] nvarchar(50) NOT NULL,
     FOREIGN KEY (UserId) REFERENCES Staff(Id)
 );
+
+insert into staff (Id, Username, Password, FullName, Gender, BirthDate, PhoneNumber, Email, Address, AvatarPath, Role)
+values('NV2', 'minh', '123456', N'Dương Quang Minh', 'Nam', '2004-03-22 13:45:06.000', '0912160889',
+'duongminhtp223@gmail.com', N'Hải Phòng','D:\DH\Kì 5\LTTQ\BTL\QLCH_ThoiTrang\images\Avatars\man.png', 'QUẢN LÝ')
