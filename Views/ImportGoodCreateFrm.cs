@@ -31,14 +31,11 @@ namespace Views
         {
             InitializeComponent();
             CenterToParent();
-            btnRemoveImportGood.Visible = false;
             txtTime.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
         }
 
         public void InitializeEdit(ImportGood importGood)
         {
-            btnRemoveImportGood.Visible = true;
-            btnAddEditImportGood.Visible = false;
 
             this.importGood = importGood;
 
@@ -83,7 +80,6 @@ namespace Views
             comboIdNameStaff.Text = $"{userId} | {userName}";
             if (staff != null)
             {
-
                 comboIdNameStaff.SelectedItem = $"{staff.Id} | {staff.Name}";
                 comboIdNameStaff.Enabled = false;
             }
@@ -140,85 +136,6 @@ namespace Views
                 AddNewImportGood();
         }
 
-        /*private void EditImportGood()
-        {
-            bool success = true;
-            var id = txtImportGoodId.Text;
-            DateTime time = DateTime.Now;
-            int quantity;
-            try
-            {
-                quantity = int.Parse(txtQuantity.Text);
-                if (quantity < 0)
-                {
-                    success = false;
-                    MessageBox.Show("Số lượng phải > 0",
-                       "Thông báo", MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
-                }
-                else if (comboIdNameSizeQuantityProduct.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Vui lòng chọn thông tin sản phẩm",
-                        "Thông báo", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    success = false;
-
-                }
-                else if (comboIdNameStaff.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Vui lòng chọn thông tin nhân viên",
-                        "Thông báo", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    success = false;
-                }
-                ImportGood importGood = new ImportGood(id, staff, product, time, quantity);
-                if (success)
-                {
-                    imController.EditImportGood(importGood);
-                    ItImportGoodInfo f = new ItImportGoodInfo(importGood, this);
-
-                    // Tìm panel có ID trùng khớp
-                    foreach (Control control in flowPanelImportGood.Controls)
-                    {
-                        if (control is ItImportGoodInfo itImportGoodInfo && itImportGoodInfo.ImportGood.Id == id)
-                        {
-                            var oldPrice = itImportGoodInfo.Sum;
-                            var newPrice = importGood.Quantity * importGood.Product.Price;
-                            // Cập nhật dữ liệu của panel
-                            itImportGoodInfo.UpdateImportGood(importGood);
-                            UpdateTotal(oldPrice, newPrice);
-                            ImportGoodCreateFrm_Load(this, null);
-                            ClearInfo();
-                            MessageBox.Show("Sửa thông tin nhập hàng thành công!");
-                            return; // Đã sửa thành công nên thoát khỏi phương thức
-                        }
-                    }
-
-                    ImportGoodCreateFrm_Load(this, null);
-                    comboIdNameSizeQuantityProduct.Text = "";
-                    comboIdNameStaff.Text = "";
-                    txtQuantity.Text = "";
-                    txtPrice.Text = "";
-                    total += f.Sum;
-                    var totalStr = GetPriceStr(total);
-                    txtTotal.Text = totalStr;
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thông tin nhập hàng thất bại!");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                MessageBox.Show("Số lượng phải là số",
-                   "Thông báo", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-                success = false;
-            }
-        }*/
-
-
         private void AddNewImportGood()
         {
             bool success = true;
@@ -252,13 +169,8 @@ namespace Views
                 success = false;
 
             }
-            else if (comboIdNameStaff.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn thông tin nhân viên",
-                    "Thông báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                success = false;
-            }
+            var staffId = GetIdOfComboStaff(comboIdNameStaff.Text.ToString());
+            staff = staffController.FindStaffById(staffs, staffId);
             ImportGood importGood = new ImportGood(id, staff, product, time, quantity);
             if (success)
             {
@@ -284,7 +196,6 @@ namespace Views
         private void ClearInfo()
         {
             comboIdNameSizeQuantityProduct.Text = "";
-            comboIdNameStaff.Text = "";
             txtQuantity.Text = "";
             txtPrice.Text = "";
         }
@@ -315,7 +226,6 @@ namespace Views
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            btnRemoveImportGood.Visible = false;
             txtTime.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
             btnAddEditImportGood.Text = "THÊM";
             btnAddEditImportGood.Visible = true;

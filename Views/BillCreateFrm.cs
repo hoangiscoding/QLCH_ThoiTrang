@@ -100,25 +100,33 @@ namespace Views
             }
 
         }
-
         private void BillUpdate()
         {
             string productId = GetIdOfCombo(comboProduct.SelectedItem.ToString());
+            int requiredQuantity = int.Parse(txtQuantity.Text);
+
+            // Kiểm tra số lượng tồn kho
+            if (product.Quantity < requiredQuantity)
+            {
+                MessageBox.Show("Số lượng trong kho không đủ. Vui lòng nhập số lượng nhỏ hơn hoặc chọn sản phẩm khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             BillDetail existingBillDetail = billDetails.FirstOrDefault(bd => bd.Product.Id == productId);
 
             if (existingBillDetail != null)
             {
-                existingBillDetail.Quantity += int.Parse(txtQuantity.Text);
-                existingBillDetail.Total = existingBillDetail.Product.Price * existingBillDetail.Quantity;
+                float addedTotal = existingBillDetail.Product.Price * requiredQuantity;
+                existingBillDetail.Quantity += requiredQuantity;
+                existingBillDetail.Total += addedTotal;
 
-                UpdatePriceBill(existingBillDetail.Total, "update");
+                UpdatePriceBill(addedTotal, "update");
 
                 UpdateBillDetailUI(existingBillDetail);
             }
             else
             {
-                BillDetail billDetail = CreateBillDetail(txtBillId.Text, productId, int.Parse(txtQuantity.Text));
+                BillDetail billDetail = CreateBillDetail(txtBillId.Text, productId, requiredQuantity);
                 billDetails.Add(billDetail);
 
                 ShowBillDetail(billDetail);
@@ -126,7 +134,8 @@ namespace Views
                 UpdatePriceBill(billDetail.Total, "add");
             }
 
-            product.Quantity -= int.Parse(txtQuantity.Text);
+            // Giảm số lượng sản phẩm trong kho
+            product.Quantity -= requiredQuantity;
             productController.UpdateProduct(product);
 
             comboProduct.Text = "";
@@ -137,15 +146,12 @@ namespace Views
         }
         private void UpdateBillDetailUI(BillDetail updatedBillDetail)
         {
-            // Xóa sản phẩm cũ trong flowPanelProductInBill
             foreach (Control control in flowPanelProductInBill.Controls)
             {
                 if (control is ItBillInfo billInfo)
                 {
-                    // Check if the current BillDetail corresponds to the one being updated
                     if (billInfo.billDetail.Product.Id == updatedBillDetail.Product.Id)
                     {
-                        // If found, remove the old one
                         flowPanelProductInBill.Controls.Remove(billInfo);
                         billInfo.Dispose();
                         break;
@@ -153,7 +159,6 @@ namespace Views
                 }
             }
 
-            // Display the updated BillDetail
             ShowBillDetail(updatedBillDetail);
         }
 
@@ -164,24 +169,30 @@ namespace Views
             flowPanelProductInBill.Controls.Add(f);
             f.Show();
         }
-
         private void UpdatePriceBill(float total, string status)
         {
             if (status == "add")
             {
                 originalAmount += total;
-                if (discountPercent != 0)
-                    discountAmount = originalAmount * discountPercent * 0.01f;
-                discountedAmount = originalAmount - discountAmount;
-
-                //set text
-                txtOriginalPrice.Text = GetPriceStr(originalAmount);
-                txtDiscountAmount.Text = GetPriceStr(discountAmount);
-                txtTotal.Text = GetPriceStr(discountedAmount);
-
-                billController.UpdateBill(txtBillId.Text, originalAmount, discountAmount, discountedAmount);
             }
+            else if (status == "update")
+            {
+                originalAmount += total;
+            }
+
+            if (discountPercent != 0)
+                discountAmount = originalAmount * discountPercent * 0.01f;
+
+            discountedAmount = originalAmount - discountAmount;
+
+            // Set text
+            txtOriginalPrice.Text = GetPriceStr(originalAmount);
+            txtDiscountAmount.Text = GetPriceStr(discountAmount);
+            txtTotal.Text = GetPriceStr(discountedAmount);
+
+            billController.UpdateBill(txtBillId.Text, originalAmount, discountAmount, discountedAmount);
         }
+
 
         private BillDetail CreateBillDetail(string billId, string productId, int quantity)
         {
