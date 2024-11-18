@@ -160,11 +160,11 @@ namespace Views
                     if (control is ItBillInfo itBillInfo)
                     {
                         exSheet.Range["A" + (row).ToString()].Value = stt.ToString();
-                        exSheet.Range["B" + (row).ToString()].Value = itBillInfo.billDetail.Product.Id.ToString();
-                        exSheet.Range["C" + (row).ToString()].Value = itBillInfo.billDetail.Product.Name.ToString();
-                        exSheet.Range["D" + (row).ToString()].Value = itBillInfo.billDetail.Quantity.ToString();
-                        exSheet.Range["E" + (row).ToString()].Value = itBillInfo.billDetail.Product.Price;
-                        exSheet.Range["F" + (row).ToString()].Value = itBillInfo.billDetail.Total.ToString();
+                        exSheet.Range["B" + (row).ToString()].Value = itBillInfo.BillDetail.Product.Id.ToString();
+                        exSheet.Range["C" + (row).ToString()].Value = itBillInfo.BillDetail.Product.Name.ToString();
+                        exSheet.Range["D" + (row).ToString()].Value = itBillInfo.BillDetail.Quantity.ToString();
+                        exSheet.Range["E" + (row).ToString()].Value = itBillInfo.BillDetail.Product.Price;
+                        exSheet.Range["F" + (row).ToString()].Value = itBillInfo.BillDetail.Total.ToString();
                         row++;
                         stt++;
                     }

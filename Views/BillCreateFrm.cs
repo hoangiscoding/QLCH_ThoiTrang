@@ -27,6 +27,7 @@ namespace Views
         private Product product;
         private Staff staff;
         private Customer customer;
+        private BillDetail billDetail;
         private int currId;
         private int discountPercent;
         private float discountedAmount = 0f;
@@ -37,6 +38,35 @@ namespace Views
             InitializeComponent();
             CenterToParent();
             txtDateTime.Text = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+        }
+
+        public void InitializeEd(BillDetail billDetail)
+        {
+
+            this.billDetail = billDetail;
+
+            txtPrice.Text = billDetail.Product.PriceStr;
+            txtQuantity.Text = billDetail.Quantity + "";
+            //txtImportGoodId.Text = importGood.Id;
+            comboProduct.Items.Clear();
+            foreach (var productItem in products)
+            {
+                comboProduct.Items.Add($"{productItem.Id} | {productItem.Name} |" +
+                    $" {productItem.Size} | {productItem.Quantity}");
+                if (billDetail.Product.Id == productItem.Id)
+                    comboProduct.Text = $"{productItem.Id} | {productItem.Name} |" +
+                    $" {productItem.Size} | {productItem.Quantity}";
+            }
+
+            //comboIdNameStaff.Items.Clear();
+            //foreach (var staffItem in staffs)
+            //{
+            //    comboIdNameStaff.Items.Add($"{staffItem.Id} | {staffItem.Name}");
+            //    if (importGood.Staff.Id == staffItem.Id)
+            //        comboIdNameStaff.Text = $"{staffItem.Id} | {staffItem.Name}";
+            //}
+            btnRemoveProduct.Visible = true;
+
         }
 
         private void btnAddNewBill_Click(object sender, EventArgs e)
@@ -150,7 +180,7 @@ namespace Views
             {
                 if (control is ItBillInfo billInfo)
                 {
-                    if (billInfo.billDetail.Product.Id == updatedBillDetail.Product.Id)
+                    if (billInfo.BillDetail.Product.Id == updatedBillDetail.Product.Id)
                     {
                         flowPanelProductInBill.Controls.Remove(billInfo);
                         billInfo.Dispose();
@@ -164,7 +194,7 @@ namespace Views
 
         private void ShowBillDetail(BillDetail billDetail)
         {
-            ItBillInfo f = new ItBillInfo(billDetail);
+            ItBillInfo f = new ItBillInfo(billDetail, this);
             f.TopLevel = false;
             flowPanelProductInBill.Controls.Add(f);
             f.Show();
@@ -248,6 +278,8 @@ namespace Views
                 comboStaff.SelectedItem = $"{staff.Id} | {staff.Name}";
                 comboStaff.Enabled = false;
             }
+            btnRemoveProduct.Visible = false;
+
         }
 
         private void FillCustomerIntoComboCustomer()
@@ -430,11 +462,11 @@ namespace Views
                     if (control is ItBillInfo itBillInfo)
                     {
                         exSheet.Range["A" + (row).ToString()].Value = stt.ToString();
-                        exSheet.Range["B" + (row).ToString()].Value = itBillInfo.billDetail.Product.Id.ToString();
-                        exSheet.Range["C" + (row).ToString()].Value = itBillInfo.billDetail.Product.Name.ToString();
-                        exSheet.Range["D" + (row).ToString()].Value = itBillInfo.billDetail.Quantity.ToString();
-                        exSheet.Range["E" + (row).ToString()].Value = itBillInfo.billDetail.Product.Price;
-                        exSheet.Range["F" + (row).ToString()].Value = itBillInfo.billDetail.Total.ToString();
+                        exSheet.Range["B" + (row).ToString()].Value = itBillInfo.BillDetail.Product.Id.ToString();
+                        exSheet.Range["C" + (row).ToString()].Value = itBillInfo.BillDetail.Product.Name.ToString();
+                        exSheet.Range["D" + (row).ToString()].Value = itBillInfo.BillDetail.Quantity.ToString();
+                        exSheet.Range["E" + (row).ToString()].Value = itBillInfo.BillDetail.Product.Price;
+                        exSheet.Range["F" + (row).ToString()].Value = itBillInfo.BillDetail.Total.ToString();
                         row++;
                         stt++;
                     }

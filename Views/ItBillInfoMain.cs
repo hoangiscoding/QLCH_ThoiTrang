@@ -44,5 +44,6 @@ namespace Views
             BillInfoFrm f = new BillInfoFrm(bill);
             f.ShowDialog();
         }
+        
     }
 }

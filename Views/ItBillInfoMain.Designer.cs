@@ -57,7 +57,7 @@
             this.txtDiscountedAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtDiscountedAmount.Location = new System.Drawing.Point(589, 16);
             this.txtDiscountedAmount.Name = "txtDiscountedAmount";
-            this.txtDiscountedAmount.Size = new System.Drawing.Size(71, 28);
+            this.txtDiscountedAmount.Size = new System.Drawing.Size(85, 32);
             this.txtDiscountedAmount.TabIndex = 3;
             this.txtDiscountedAmount.Text = "Trị giá";
             // 
@@ -68,7 +68,7 @@
             this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtDate.Location = new System.Drawing.Point(380, 16);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(62, 28);
+            this.txtDate.Size = new System.Drawing.Size(74, 32);
             this.txtDate.TabIndex = 2;
             this.txtDate.Text = "Ngày";
             // 
@@ -79,7 +79,7 @@
             this.txtCustomerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtCustomerName.Location = new System.Drawing.Point(102, 16);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(123, 28);
+            this.txtCustomerName.Size = new System.Drawing.Size(147, 32);
             this.txtCustomerName.TabIndex = 1;
             this.txtCustomerName.Text = "Khách hàng";
             // 
@@ -90,13 +90,13 @@
             this.txtBillId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtBillId.Location = new System.Drawing.Point(14, 16);
             this.txtBillId.Name = "txtBillId";
-            this.txtBillId.Size = new System.Drawing.Size(71, 28);
+            this.txtBillId.Size = new System.Drawing.Size(85, 32);
             this.txtBillId.TabIndex = 0;
             this.txtBillId.Text = "Số HĐ";
             // 
             // ItBillInfoMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 61);
             this.Controls.Add(this.panel4);

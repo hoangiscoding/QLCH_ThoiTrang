@@ -79,6 +79,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRemoveProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -204,6 +205,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.btnRemoveProduct);
             this.panel6.Controls.Add(this.btnPay);
             this.panel6.Controls.Add(this.btnAddNewBill);
             this.panel6.Controls.Add(this.panel12);
@@ -230,9 +232,9 @@
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(222, 341);
+            this.btnPay.Location = new System.Drawing.Point(295, 346);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(212, 56);
+            this.btnPay.Size = new System.Drawing.Size(142, 45);
             this.btnPay.TabIndex = 14;
             this.btnPay.Text = "THANH TOÁN";
             this.btnPay.UseVisualStyleBackColor = false;
@@ -246,9 +248,9 @@
             this.btnAddNewBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnAddNewBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewBill.Location = new System.Drawing.Point(15, 341);
+            this.btnAddNewBill.Location = new System.Drawing.Point(16, 348);
             this.btnAddNewBill.Name = "btnAddNewBill";
-            this.btnAddNewBill.Size = new System.Drawing.Size(185, 56);
+            this.btnAddNewBill.Size = new System.Drawing.Size(124, 43);
             this.btnAddNewBill.TabIndex = 12;
             this.btnAddNewBill.Text = "THÊM";
             this.btnAddNewBill.UseVisualStyleBackColor = false;
@@ -633,6 +635,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "HOÁ ĐƠN";
             // 
+            // btnRemoveProduct
+            // 
+            this.btnRemoveProduct.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveProduct.FlatAppearance.BorderSize = 0;
+            this.btnRemoveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnRemoveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveProduct.Location = new System.Drawing.Point(155, 348);
+            this.btnRemoveProduct.Name = "btnRemoveProduct";
+            this.btnRemoveProduct.Size = new System.Drawing.Size(125, 43);
+            this.btnRemoveProduct.TabIndex = 15;
+            this.btnRemoveProduct.Text = "XÓA";
+            this.btnRemoveProduct.UseVisualStyleBackColor = false;
+            // 
             // BillCreateFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -723,5 +740,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textNumber;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRemoveProduct;
     }
 }
