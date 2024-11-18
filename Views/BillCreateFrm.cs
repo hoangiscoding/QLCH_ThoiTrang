@@ -576,7 +576,7 @@ namespace Views
 
                 ClearInfo();
 
-                MessageBox.Show("Xoá thành công. Vui lòng nhấn 'LÀM MỚI'!");
+                MessageBox.Show("Xoá thành công!");
                 btnRemoveProduct.Visible = false;
 
             }

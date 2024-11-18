@@ -20,7 +20,7 @@ namespace Controllers
         void CreateNewBill(Bill bill);
         void CreateNewBillDetail(BillDetail billDetail);
         void RemoveBill(Bill bill);
-        //void RemoveBillDetail(BillDetail billDetail);
+        void RemoveBillDetail(BillDetail billDetail);
         void UpdateBill(string billId, float originalAmount, float discountAmount, float discountedAmount);
         void PayBill(string billId, float originalAmount, float discountAmount, float discountedAmount);
 

@@ -82,7 +82,7 @@ namespace Views
             var staff = staffController.CheckLogin(userName, passWord, role);
             if (staff != null)
             {
-                using (SqlConnection connect = new SqlConnection("Data source=LAPTOP-DNIFFA8V\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True"))
+                using (SqlConnection connect = new SqlConnection("Data source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True"))
                 {
                     connect.Open();
                     string sql = "select Id, Username from Staff where Username = @userName and Password = @passWord";
