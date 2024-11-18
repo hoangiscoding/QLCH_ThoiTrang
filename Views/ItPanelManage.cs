@@ -122,6 +122,17 @@ namespace Views
             ItPanelManage_Load(this, null);
         }
 
+        private void txtStaffFind_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (comboStaffFind.SelectedIndex == 1)
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
         private void txtStaffFind_MouseClick(object sender, MouseEventArgs e)
         {
             if (txtStaffFind.Text == "Tìm kiếm:")
