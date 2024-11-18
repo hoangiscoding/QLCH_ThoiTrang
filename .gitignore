@@ -361,12 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Data/Store_Procedure.sql
-/Data/Store_Procudre.sql
-/Controllers/IBill.cs
-/Controllers/ICommon.cs
-/Controllers/ICustomer.cs
-/Controllers/IImportGood.cs
-/Views/LoginFrm.cs
-/Controllers/IProduct.cs
-/Controllers/IStaff.cs
+!/Data/Store_Procedure.sql
+!/Data/Store_Procudre.sql
+!/Controllers/IBill.cs
+!/Controllers/ICommon.cs
+!/Controllers/ICustomer.cs
+!/Controllers/IImportGood.cs
+!/Views/LoginFrm.cs
+!/Controllers/IProduct.cs
+!/Controllers/IStaff.cs
