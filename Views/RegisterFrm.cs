@@ -101,7 +101,6 @@ namespace Views
                 avatarPath = selectedImagePath;
             }
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             bool success = true;
@@ -116,8 +115,8 @@ namespace Views
             string phone = txtPhoneNumber.Text;
             string address = txtAddress.Text;
             string gender = "Khác";
-
             DateTime birthDate = dateTimePickerBirthDate.Value;
+
             if (comboGender.SelectedIndex < 0)
             {
                 MessageBox.Show("Vui lòng chọn giới tính!");
@@ -130,7 +129,7 @@ namespace Views
             }
             else if (check.IsUsernameExist(username, usernames))
             {
-                MessageBox.Show("username đã tồn tại!");
+                MessageBox.Show("Username đã tồn tại!");
                 success = false;
             }
             else if (!check.IsPasswordValid(password))
@@ -169,12 +168,17 @@ namespace Views
                 if (gender == "Nữ")
                     avatarPath = "D:\\DH\\Kì 5\\LTTQ\\BTL\\QLCH_ThoiTrang\\images\\Avatars\\woman.png";
             }
+
             if (success)
             {
+                string role = staffs.Count == 0 ? "QUẢN LÝ" : "NHÂN VIÊN";
+
                 var currId = staffController.GetCurrId(staffs);
                 Staff staff = new Staff(++currId, username, password, name, gender,
-                    birthDate, phone, email, address, avatarPath, "NHÂN VIÊN");
+                    birthDate, phone, email, address, avatarPath, role);
+
                 staffController.CreateNewStaff(staff);
+
                 MessageBox.Show("Đăng ký thành công!");
                 this.Dispose();
             }
