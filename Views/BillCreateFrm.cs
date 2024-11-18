@@ -24,12 +24,14 @@ namespace Views
         ProductController productController = new ProductController();
         CustomerController customerController = new CustomerController();
         BillController billController = new BillController();
+        private Bill bill;
         private Product product;
         private Staff staff;
         private Customer customer;
         private BillDetail billDetail;
         private int currId;
         private int discountPercent;
+        private int total;
         private float discountedAmount = 0f;
         private float originalAmount = 0f;
         private float discountAmount = 0f;
@@ -175,6 +177,7 @@ namespace Views
 
             FillProductIntoComboProduct();
         }
+
         private void UpdateBillDetailUI(BillDetail updatedBillDetail)
         {
             foreach (Control control in flowPanelProductInBill.Controls)
@@ -223,7 +226,6 @@ namespace Views
 
             billController.UpdateBill(txtBillId.Text, originalAmount, discountAmount, discountedAmount);
         }
-
 
         private BillDetail CreateBillDetail(string billId, string productId, int quantity)
         {
@@ -545,6 +547,48 @@ namespace Views
             ResetForm();
         }
 
+        private void btnRemoveProduct_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show(
+                "Bạn có chắc chắn muốn xoá?",
+                "Thông báo",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                billController.RemoveBillDetail(billDetail);
+
+                //remove khỏi flowpanel
+                // Tìm panel có ID trùng khớp
+                foreach (Control control in flowPanelProductInBill.Controls)
+                {
+                    if (control is ItBillInfo itBillInfo && itBillInfo.BillDetail.Id == billDetail.Id)
+                    {
+                        flowPanelProductInBill.Controls.Remove(control);
+                        product = productController.FindProductById(products, billDetail.Product.Id);
+                        product.Quantity += billDetail.Quantity;
+                        productController.UpdateProduct(product);
+                    }
+                }
+
+                //Load lại trang
+                BillCreateFrm_Load(this, null);
+
+                ClearInfo();
+
+                MessageBox.Show("Xoá thành công. Vui lòng nhấn 'LÀM MỚI'!");
+                btnRemoveProduct.Visible = false;
+
+            }
+        }
+
+        private void ClearInfo()
+        {
+            comboProduct.Text = "";
+            txtQuantity.Text = "";
+            txtPrice.Text = "";
+        }
+
         private void ResetForm()
         {
             textNumber.Text = "";
@@ -569,5 +613,7 @@ namespace Views
             // Load lại dữ liệu khách hàng
             customers = customerController.LoadAllCustomer();
         }
+
+        
     }
 }

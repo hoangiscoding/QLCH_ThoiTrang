@@ -18,13 +18,18 @@ namespace Views
 {
     public partial class BillInfoFrm : Form
     {
-        private Bill bill;
+        
         List<Customer> customers = new List<Customer>();
         List<BillDetail> billDetails = new List<BillDetail>();
+        List<Product> products = new List<Product>();
         BillController billController = new BillController();
         CustomerController customerController = new CustomerController();
+        ProductController productController = new ProductController();
         private Customer customer;
+        private BillDetail billDetail;
         private int discountPercent = 0;
+        private Bill bill;
+        private Product product;
         public BillInfoFrm(Bill bill)
         {
             InitializeComponent();
@@ -194,6 +199,36 @@ namespace Views
         private void btnPrint_Click(object sender, EventArgs e)
         {
             PrintBillPay();
+        }
+
+        private void btnRemoveBill_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show(
+                "Bạn có chắc chắn muốn xoá?",
+                "Thông báo",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                billController.RemoveBill(bill);
+
+                //remove khỏi flowpanel
+                // Tìm panel có ID trùng khớp
+                foreach (Control control in flowPanelProductInBill.Controls)
+                {
+                    if (control is ItBillInfo itBillInfo && itBillInfo.Bill.Id == bill.Id)
+                    {
+                        flowPanelProductInBill.Controls.Remove(control);
+                        product = productController.FindProductById(products, billDetail.Product.Id);
+                        product.Quantity += billDetail.Quantity;
+                        productController.UpdateProduct(product);
+                    }
+                }
+
+                MessageBox.Show("Xoá thành công");
+                this.Hide();
+
+            }
         }
     }
 }

@@ -19,13 +19,15 @@ namespace Controllers
         List<Bill> FindBillByDate(string date);
         void CreateNewBill(Bill bill);
         void CreateNewBillDetail(BillDetail billDetail);
+        void RemoveBill(Bill bill);
+        //void RemoveBillDetail(BillDetail billDetail);
         void UpdateBill(string billId, float originalAmount, float discountAmount, float discountedAmount);
         void PayBill(string billId, float originalAmount, float discountAmount, float discountedAmount);
 
     }
     public class BillController : IBill
     {
-        private string connStr = "Data Source=LAPTOP-DNIFFA8V\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
+        private string connStr = "Data Source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
         private Staff Staff { get; set; }
         private Product Product { get; set; }
         private Customer Customer { get; set; }
@@ -410,5 +412,67 @@ namespace Controllers
             }
             return bills;
         }
+
+        public void RemoveBill(Bill bill)
+        {
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("RemoveBill", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Id", bill.Id);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error in RemoveBill: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        public void RemoveBillDetail(BillDetail billDetailId)
+        {
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("RemoveBillDetail", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Id", billDetailId.Id);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error in RemoveBillDetail: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }

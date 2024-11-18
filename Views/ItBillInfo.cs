@@ -16,6 +16,8 @@ namespace Views
     public partial class ItBillInfo : Form
     {
         public BillDetail BillDetail { get; set; }
+        public Bill Bill { get; set; }
+
         private BillCreateFrm prtFrm;
         public ItBillInfo(BillDetail billDetail, BillCreateFrm prtFrm)
         {
@@ -28,6 +30,7 @@ namespace Views
         {
             InitializeComponent();
             BillDetail = billDetail;
+            this.Bill = new Bill();
             LoadControls();
         }
         private void LoadControls()
@@ -67,14 +70,7 @@ namespace Views
         }
         private void panelBillInfo_Click(object sender, EventArgs e)
         {
-            if (prtFrm != null)
-            {
-                prtFrm.InitializeEd(BillDetail);
-            }
-            else
-            {
-                MessageBox.Show("Print form is not initialized.");
-            }
+            prtFrm.InitializeEd(BillDetail);
         }
     }
 }

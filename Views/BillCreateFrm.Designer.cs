@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnExist = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnRemoveProduct = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnAddNewBill = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -79,7 +80,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRemoveProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -223,6 +223,22 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(450, 410);
             this.panel6.TabIndex = 8;
+            // 
+            // btnRemoveProduct
+            // 
+            this.btnRemoveProduct.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveProduct.FlatAppearance.BorderSize = 0;
+            this.btnRemoveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnRemoveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveProduct.Location = new System.Drawing.Point(155, 348);
+            this.btnRemoveProduct.Name = "btnRemoveProduct";
+            this.btnRemoveProduct.Size = new System.Drawing.Size(125, 43);
+            this.btnRemoveProduct.TabIndex = 15;
+            this.btnRemoveProduct.Text = "XÓA";
+            this.btnRemoveProduct.UseVisualStyleBackColor = false;
+            this.btnRemoveProduct.Click += new System.EventHandler(this.btnRemoveProduct_Click);
             // 
             // btnPay
             // 
@@ -634,21 +650,6 @@
             this.label1.Size = new System.Drawing.Size(215, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "HOÁ ĐƠN";
-            // 
-            // btnRemoveProduct
-            // 
-            this.btnRemoveProduct.BackColor = System.Drawing.Color.Silver;
-            this.btnRemoveProduct.FlatAppearance.BorderSize = 0;
-            this.btnRemoveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
-            this.btnRemoveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveProduct.Location = new System.Drawing.Point(155, 348);
-            this.btnRemoveProduct.Name = "btnRemoveProduct";
-            this.btnRemoveProduct.Size = new System.Drawing.Size(125, 43);
-            this.btnRemoveProduct.TabIndex = 15;
-            this.btnRemoveProduct.Text = "XÓA";
-            this.btnRemoveProduct.UseVisualStyleBackColor = false;
             // 
             // BillCreateFrm
             // 

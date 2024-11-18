@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.Label();
             this.txtOriginalPrice = new System.Windows.Forms.Label();
             this.txtDiscountAmount = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnRemoveBill = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.btnRemoveBill);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.txtTotal);
             this.panel1.Controls.Add(this.txtOriginalPrice);
@@ -91,6 +93,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 800);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.White;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(213, 674);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(167, 44);
+            this.btnPrint.TabIndex = 12;
+            this.btnPrint.Text = "IN";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // txtTotal
             // 
@@ -443,21 +461,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "HOÁ ĐƠN";
             // 
-            // btnPrint
+            // btnRemoveBill
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.White;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(213, 674);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(167, 44);
-            this.btnPrint.TabIndex = 12;
-            this.btnPrint.Text = "IN";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnRemoveBill.BackColor = System.Drawing.Color.White;
+            this.btnRemoveBill.FlatAppearance.BorderSize = 0;
+            this.btnRemoveBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnRemoveBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveBill.Location = new System.Drawing.Point(386, 674);
+            this.btnRemoveBill.Name = "btnRemoveBill";
+            this.btnRemoveBill.Size = new System.Drawing.Size(167, 44);
+            this.btnRemoveBill.TabIndex = 25;
+            this.btnRemoveBill.Text = "XÓA";
+            this.btnRemoveBill.UseVisualStyleBackColor = false;
+            this.btnRemoveBill.Click += new System.EventHandler(this.btnRemoveBill_Click);
             // 
             // BillInfoFrm
             // 
@@ -530,5 +548,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnRemoveBill;
     }
 }

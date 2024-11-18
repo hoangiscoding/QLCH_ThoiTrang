@@ -23,7 +23,14 @@ namespace Views
             importGood = import;
         }
 
-        private void btnDeleteImportGood_Click(object sender, EventArgs e)
+        
+
+        public void InitializeEdit(ImportGood importGood)
+        {
+            MessageBox.Show("Chỉnh sửa thành công");
+        }
+
+            private void btnDeleteImportGood_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
@@ -38,6 +45,7 @@ namespace Views
             flowPanelImportGood.Controls.Add(f);
             f.Show();
         }
+
 
         private void btnPrint_Click(object sender, EventArgs e)
         {

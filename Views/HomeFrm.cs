@@ -97,7 +97,6 @@ namespace Views
                 LoginFrm loginForm = Application.OpenForms.OfType<LoginFrm>().FirstOrDefault();
                 if (loginForm != null)
                 {
-                    loginForm.ResetForm();
                     loginForm.Show();
                 }
                 else
