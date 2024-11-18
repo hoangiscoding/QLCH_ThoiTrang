@@ -89,15 +89,24 @@ namespace Views
         //Sự kiện nút Logout
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var msg = "Bạn có chắc chắn muốn thoát?";
+            var msg = "Bạn có chắc chắn muốn đăng xuất?";
             var caption = "Thông báo";
             var result = MessageBox.Show(msg, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
-                this.Dispose();
+                LoginFrm loginForm = Application.OpenForms.OfType<LoginFrm>().FirstOrDefault();
+                if (loginForm != null)
+                {
+                    loginForm.ResetForm();
+                    loginForm.Show();
+                }
+                else
+                {
+                    loginForm = new LoginFrm();
+                    loginForm.Show();
+                }
 
-                LoginFrm loginForm = new LoginFrm(); // Tạo instance của LoginFrm
-                loginForm.Show();  // Hiển thị LoginFrm            }
+                this.Close();
             }
         }
 
