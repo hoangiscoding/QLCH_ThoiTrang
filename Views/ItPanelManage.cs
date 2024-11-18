@@ -62,6 +62,8 @@ namespace Views
         {
             string criteria = "";
             string content = txtStaffFind.Text;
+
+
             switch (comboStaffFind.SelectedIndex)
             {
                 case 0:
@@ -80,6 +82,8 @@ namespace Views
                     criteria = "Find By Role";
                     break;
             }
+
+
             switch (criteria)
             {
                 case "Find By Name":
@@ -112,8 +116,10 @@ namespace Views
                         ItPanelManage_Load(this, null);
                         break;
                     }
-
             }
+
+
+            ItPanelManage_Load(this, null);
         }
 
         private void txtStaffFind_MouseClick(object sender, MouseEventArgs e)
