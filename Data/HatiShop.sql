@@ -834,6 +834,27 @@ BEGIN
 	END
 END
 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[FindByGender]
+	@Gender nvarchar(50),
+	@Table varchar(50)
+AS
+BEGIN
+	IF @Table = 'Staff'
+	BEGIN
+		SELECT
+			Id, Username, Password, Fullname, Gender, BirthDate, PhoneNumber, Email, Address, AvatarPath, Role
+		FROM 
+			Staff
+		WHERE
+			Gender = @Gender
+	END
+END
+GO
+
 GO
 /****** Object:  StoredProcedure [dbo].[FindImportGoodByDate]    Script Date: 11/18/2024 12:54:00 PM ******/
 SET ANSI_NULLS ON

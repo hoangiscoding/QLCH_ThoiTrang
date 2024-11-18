@@ -59,6 +59,8 @@ namespace Views
                 if (importGood.Staff.Id == staffItem.Id)
                     comboIdNameStaff.Text = $"{staffItem.Id} | {staffItem.Name}";
             }
+            btnRemoveImportGood.Visible = true;
+
         }
 
         private void btnExist_Click(object sender, EventArgs e)
@@ -83,6 +85,7 @@ namespace Views
                 comboIdNameStaff.SelectedItem = $"{staff.Id} | {staff.Name}";
                 comboIdNameStaff.Enabled = false;
             }
+            btnRemoveImportGood.Visible = false;
         }
 
         private void FillProductIntoComboProduct()
@@ -264,6 +267,8 @@ namespace Views
                 ClearInfo();
 
                 MessageBox.Show("Xoá thành công. Vui lòng nhấn 'LÀM MỚI'!");
+                btnRemoveImportGood.Visible = false;
+
             }
         }
     }
