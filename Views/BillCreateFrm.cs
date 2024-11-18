@@ -124,6 +124,7 @@ namespace Views
                     billController.CreateNewBill(bill);
                 }
 
+                customer.SetRank();
                 //Gọi update bill
                 BillUpdate();
 
@@ -249,15 +250,24 @@ namespace Views
 
         private void btnExist_Click(object sender, EventArgs e)
         {
-            var msg = "Bạn có chắc chắn muốn thoát?";
-            var caption = "Thông báo";
-            var result = MessageBox.Show(msg, caption, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
+            if (billDetails.Count > 0)
             {
-                this.Dispose();
-            }
-        }
+                var msg = "Hóa đơn chưa được thanh toán. Bạn có muốn hoàn tác các thay đổi?";
+                var caption = "Cảnh báo";
+                var result = MessageBox.Show(msg, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    foreach (var billDetail in billDetails)
+                    {
+                        product = productController.FindProductById(products, billDetail.Product.Id);
+                        product.Quantity += billDetail.Quantity;
+                        productController.UpdateProduct(product);
+                    }
+                }
+            }
+            this.Dispose();
+        }
         private void BillCreateFrm_Load(object sender, EventArgs e)
         {
             staffs = staffController.LoadAllStaff();
@@ -495,20 +505,28 @@ namespace Views
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            
+            if (billDetails.Count == 0)
+            {
+                MessageBox.Show("Hóa đơn không có sản phẩm. Vui lòng thêm sản phẩm trước khi thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var res = MessageBox.Show("Bạn có chắc chắn muốn thanh toán?",
                 "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
+
             if (res == DialogResult.Yes)
             {
                 var res1 = MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (res1 == DialogResult.Yes) {
+                if (res1 == DialogResult.Yes)
+                {
                     PrintBillPay();
                 }
                 Payment();
             }
         }
+
 
         private void Payment()
         {

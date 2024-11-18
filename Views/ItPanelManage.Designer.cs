@@ -103,6 +103,7 @@
             this.txtStaffFind.Text = "Tìm kiếm:";
             this.txtStaffFind.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtStaffFind_MouseClick);
             this.txtStaffFind.TextChanged += new System.EventHandler(this.txtStaffFind_TextChanged);
+            this.txtStaffFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStaffFind_KeyPress);
             // 
             // panel4
             // 
