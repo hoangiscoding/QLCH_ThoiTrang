@@ -213,6 +213,10 @@ namespace Views
             {
                 originalAmount += total;
             }
+            else if (status == "remove")
+            {
+                originalAmount -= total;
+            }
 
             if (discountPercent != 0)
                 discountAmount = originalAmount * discountPercent * 0.01f;
@@ -547,6 +551,7 @@ namespace Views
             ResetForm();
         }
 
+
         private void btnRemoveProduct_Click(object sender, EventArgs e)
         {
             var res = MessageBox.Show(
@@ -554,33 +559,37 @@ namespace Views
                 "Thông báo",
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question);
+
             if (res == DialogResult.OK)
             {
+
                 billController.RemoveBillDetail(billDetail);
 
-                //remove khỏi flowpanel
-                // Tìm panel có ID trùng khớp
                 foreach (Control control in flowPanelProductInBill.Controls)
                 {
-                    if (control is ItBillInfo itBillInfo && itBillInfo.BillDetail.Id == billDetail.Id)
+                    if (control is ItBillInfo billInfo && billInfo.BillDetail.Product.Id == billDetail.Product.Id)
                     {
-                        flowPanelProductInBill.Controls.Remove(control);
-                        product = productController.FindProductById(products, billDetail.Product.Id);
-                        product.Quantity += billDetail.Quantity;
-                        productController.UpdateProduct(product);
+                        flowPanelProductInBill.Controls.Remove(billInfo);
+                        billInfo.Dispose();
+                        break;
                     }
                 }
 
-                //Load lại trang
-                BillCreateFrm_Load(this, null);
+                product = productController.FindProductById(products, billDetail.Product.Id);
+                product.Quantity += billDetail.Quantity;
+                productController.UpdateProduct(product);
 
+                UpdatePriceBill(billDetail.Total, "remove");
+                FillProductIntoComboProduct();
                 ClearInfo();
 
                 MessageBox.Show("Xoá thành công!");
-                btnRemoveProduct.Visible = false;
 
+                btnRemoveProduct.Visible = false;
             }
         }
+
+
 
         private void ClearInfo()
         {

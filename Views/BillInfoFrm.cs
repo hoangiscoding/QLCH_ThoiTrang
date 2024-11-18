@@ -95,7 +95,6 @@ namespace Views
             }
 
         }
-
         private void LoadBillDetails()
         {
             billDetails = billController.LoadBillDetail();
@@ -227,7 +226,6 @@ namespace Views
 
                 MessageBox.Show("Xoá thành công");
                 this.Hide();
-
             }
         }
     }
