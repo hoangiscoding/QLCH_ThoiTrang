@@ -11,6 +11,7 @@ using Models;
 using Controllers;
 using System.Globalization;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Data.SqlClient;
 namespace Views
 {
     public partial class BillCreateFrm : Form
@@ -154,8 +155,12 @@ namespace Views
                 existingBillDetail.Total += addedTotal;
 
                 UpdatePriceBill(addedTotal, "update");
-
+                
                 UpdateBillDetailUI(existingBillDetail);
+                
+                billController.CreateNewBillDetail(billDetail);
+
+                
             }
             else
             {
@@ -163,8 +168,10 @@ namespace Views
                 billDetails.Add(billDetail);
 
                 ShowBillDetail(billDetail);
-
+                
                 UpdatePriceBill(billDetail.Total, "add");
+                
+                billController.CreateNewBillDetail(billDetail);
             }
 
             // Giảm số lượng sản phẩm trong kho
@@ -176,6 +183,7 @@ namespace Views
             txtQuantity.Text = "";
 
             FillProductIntoComboProduct();
+            
         }
 
         private void UpdateBillDetailUI(BillDetail updatedBillDetail)
@@ -543,6 +551,10 @@ namespace Views
 
             foreach (var billDetail in billDetails)
             {
+                if(billDetail.IsRemoved)
+                {
+                    continue;
+                }
                 billController.CreateNewBillDetail(billDetail);
             }
 
@@ -562,7 +574,6 @@ namespace Views
 
             if (res == DialogResult.OK)
             {
-
                 billController.RemoveBillDetail(billDetail);
 
                 foreach (Control control in flowPanelProductInBill.Controls)

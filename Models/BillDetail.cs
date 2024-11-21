@@ -14,7 +14,7 @@ namespace Models
         public string ProductId { get; set; }
         public int Quantity { get; set; }
         public float Total { get; set; }
-        public bool IsRemoved { get; set; } = false;
+        public bool IsRemoved { get; set; } = true;
         public BillDetail() { }
         public BillDetail(string id, Product product, int quantity, float total)
         {

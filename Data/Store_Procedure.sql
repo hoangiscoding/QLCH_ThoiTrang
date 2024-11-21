@@ -407,9 +407,9 @@ AS
 BEGIN
 	UPDATE Bill
 	SET
-		OriginalPrice = OriginalPrice +  @OriginalPrice,
-		DiscountAmount = DiscountAmount + @DiscountAmount,
-		DiscountedTotal = DiscountedTotal + @DiscountedTotal 
+		OriginalPrice = @OriginalPrice,
+		DiscountAmount = @DiscountAmount,
+		DiscountedTotal = @DiscountedTotal 
 	WHERE 
 		Id = @Id
 END;
@@ -713,6 +713,8 @@ BEGIN
     WHERE 
         C.FullName LIKE '%' + @Name + '%'
 END;
+
+
 -- Tìm đơn hàng theo ngày nhập
 CREATE PROC FindBillByDate
 	@Date varchar(50)
@@ -724,3 +726,21 @@ BEGIN
 		Bill
 	WHERE DAY(CreationTime) = @Date
 END;
+
+--Xóa đơn hàng
+CREATE PROCEDURE RemoveBill
+    @Id NVARCHAR(50)
+AS
+BEGIN
+    DELETE FROM BillDetail WHERE Id = @Id;
+    DELETE FROM Bill WHERE Id = @Id;
+END
+
+--Xóa chi tiết đơn hàng
+CREATE PROCEDURE RemoveBillDetail
+	@Id VARCHAR(50),
+    @ProductId VARCHAR(50)
+AS
+BEGIN
+    DELETE FROM BillDetail WHERE Id = @Id AND ProductId = @ProductId;
+END
