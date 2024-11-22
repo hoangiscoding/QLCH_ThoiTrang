@@ -12,6 +12,7 @@ using Controllers;
 using System.Globalization;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.SqlClient;
+using System.IO;
 namespace Views
 {
     public partial class BillCreateFrm : Form
@@ -138,6 +139,7 @@ namespace Views
         {
             string productId = GetIdOfCombo(comboProduct.SelectedItem.ToString());
             int requiredQuantity = int.Parse(txtQuantity.Text);
+            string billDetailId = txtBillId.Text;
 
             // Kiểm tra số lượng tồn kho
             if (product.Quantity < requiredQuantity)
@@ -157,8 +159,8 @@ namespace Views
                 UpdatePriceBill(addedTotal, "update");
                 
                 UpdateBillDetailUI(existingBillDetail);
-                
-                billController.CreateNewBillDetail(billDetail);
+
+                billController.UpdateBillDetail(billDetailId, productId, existingBillDetail.Quantity, existingBillDetail.Total);
 
                 
             }
@@ -435,13 +437,29 @@ namespace Views
         {
             if (comboCustomer.Text != "" || txtBillId.Text != "" || flowPanelProductInBill.Controls.Count > 0)
             {
+                string currentDate = DateTime.Now.ToString("yyyyMMđ");
+                string fileName = $"BI_{currentDate}.xlsx";
 
                 Excel.Application exApp = new Excel.Application();
 
-                Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
-                Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
-                Excel.Range exRange = (Excel.Range)exSheet.Cells[1, 1];
+                Excel.Workbook exBook; //= exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+                //Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+                //Excel.Workbook exBook = exApp.Workbooks.Add();
+                //
 
+                if (File.Exists(fileName))
+                {
+                    exBook = exApp.Workbooks.Open(fileName);
+                }
+                else
+                {
+                    exBook = exApp.Workbooks.Add();
+                }
+
+                //int sheetCount = exBook.Sheets.Count + 1;
+                Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets.Add();
+                exSheet.Name = txtBillId.Text;
+                //Excel.Range exRange = (Excel.Range)exSheet.Cells[1, 1];
 
                 Excel.Range dc = (Excel.Range)exSheet.Cells[2, 1];
                 dc.Font.Size = 13;
@@ -497,7 +515,6 @@ namespace Views
                 }
                 exSheet.Range["F" + (row + 1).ToString()].Value = "Tổng tiền: " + txtTotal.Text;
                 exSheet.Range["F" + (row + 2).ToString()].Value = "Nhân viên: " + comboStaff.Text;
-                exSheet.Name = txtBillId.Text;
                 exBook.Activate();
 
                 //Lưu file
@@ -585,6 +602,8 @@ namespace Views
                         break;
                     }
                 }
+
+                billDetails.Remove(billDetail);
 
                 product = productController.FindProductById(products, billDetail.Product.Id);
                 product.Quantity += billDetail.Quantity;

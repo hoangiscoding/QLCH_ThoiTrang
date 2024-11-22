@@ -221,6 +221,41 @@ namespace Controllers
             }
         }
 
+        public void UpdateBillDetail(string billDetailId, string productId, int quantity, float total)
+        {
+            using (SqlConnection connection = new SqlConnection(connStr))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("UpdateBillDetail", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Id", billDetailId);
+                    command.Parameters.AddWithValue("@ProductId", productId);
+                    command.Parameters.AddWithValue("@Quantity", quantity);
+                    command.Parameters.AddWithValue("@Total", total);
+
+                    //thực thi
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error in UpdateBillDetail: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            connection.Close();
+                        }
+                    }
+
+                }
+            }
+        }
+
         public void PayBill(string billId, float originalAmount, float discountAmount, float discountedAmount)
         {
             using (SqlConnection connection = new SqlConnection(connStr))

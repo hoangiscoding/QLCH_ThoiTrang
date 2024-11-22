@@ -414,6 +414,21 @@ BEGIN
 		Id = @Id
 END;
 
+--Sửa/Update BillDetail
+CREATE PROCEDURE UpdateBillDetail
+    @Id VARCHAR(50),
+    @ProductId VARCHAR(50),
+    @Quantity INT,
+    @Total FLOAT
+AS
+BEGIN
+    UPDATE BillDetail
+    SET Quantity = @Quantity,
+        Total = @Total
+    WHERE Id = @Id AND ProductId = @ProductId
+END
+
+
 --Xoá nhân viên khỏi danh sách thông qua username
 CREATE PROC RemoveStaffByUsername
 	@Username varchar(50)

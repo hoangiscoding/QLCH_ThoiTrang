@@ -184,7 +184,7 @@ namespace Views
                 save.FilterIndex = 2;
                 if (save.ShowDialog() == DialogResult.OK)
                 {
-                    exBook.SaveAs(save.FileName.ToLower());
+                    exBook.SaveAs(save.FileName);
                     MessageBox.Show("Đã lưu file thành công!");
                 }
                 exApp.Quit();
