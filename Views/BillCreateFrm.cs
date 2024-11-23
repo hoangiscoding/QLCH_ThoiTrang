@@ -26,14 +26,12 @@ namespace Views
         ProductController productController = new ProductController();
         CustomerController customerController = new CustomerController();
         BillController billController = new BillController();
-        private Bill bill;
         private Product product;
         private Staff staff;
         private Customer customer;
         private BillDetail billDetail;
         private int currId;
         private int discountPercent;
-        private int total;
         private float discountedAmount = 0f;
         private float originalAmount = 0f;
         private float discountAmount = 0f;

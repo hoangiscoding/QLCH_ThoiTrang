@@ -646,7 +646,7 @@ CREATE PROC FindProductById
 AS
 BEGIN
 	SELECT
-		Id, Name,Price, Type,Quantity,Size,Info,AvatarPath
+		Id, Name,Cost,Price, Type,Quantity,Size,Info,AvatarPath
 	FROM 
 		Product
 	WHERE Id LIKE '%' + @Id + '%'
@@ -658,7 +658,7 @@ CREATE PROC FindProductByName
 AS
 BEGIN
 	SELECT
-		Id, Name,Price, Type,Quantity,Size,Info,AvatarPath
+		Id, Name,Cost,Price, Type,Quantity,Size,Info,AvatarPath
 	FROM 
 		Product
 	WHERE Name LIKE '%' + @Name + '%'
@@ -670,7 +670,7 @@ CREATE PROC FindImportGoodById
 AS 
 BEGIN
 	SELECT 
-		Id, StaffId,ProductId,ImportTime,Quantity
+		Id, StaffId,ProductId,ImportTime,Quantity,Total
 	FROM 
 		ImportGood
 	WHERE Id LIKE '%' + @Id + '%'
@@ -682,7 +682,7 @@ CREATE PROC FindImportGoodByStaffName
 AS 
 BEGIN
 	SELECT 
-		Id, StaffId,ProductId,ImportTime,Quantity
+		Id, StaffId,ProductId,ImportTime,Quantity,Total
 	FROM 
 		ImportGood
 	WHERE 
@@ -701,7 +701,7 @@ CREATE PROC FindImportGoodByDate
 AS 
 BEGIN
 	SELECT 
-		Id, StaffId,ProductId,ImportTime,Quantity
+		Id, StaffId,ProductId,ImportTime,Quantity,Total
 	FROM 
 		ImportGood
 	WHERE DAY(ImportTime) = @Date
