@@ -18,6 +18,7 @@ namespace Controllers
         int GetCurrId(List<Product> products);
         void CreateNewProduct(Product product);
         void EditProductInfo(Product product);
+        int GetCostInt(string costStr);
         int GetPriceInt(string priceStr);
         bool RemoveProduct(string productId);
         Product FindProductById(List<Product> products, string id);
@@ -66,13 +67,14 @@ namespace Controllers
                         {
                             var id = reader["Id"].ToString();
                             var name = reader["Name"].ToString();
+                            var cost = (int)reader["Cost"];
                             var price = (int)reader["Price"];
                             var type = reader["Type"].ToString();
                             var size = reader["Size"].ToString();
                             var quantity = (int)reader["Quantity"];
                             var info = reader["Info"].ToString();
                             var avatarPath = reader["AvatarPath"].ToString();
-                            Product product = new Product(id, name, price, type, quantity, size, info, avatarPath);
+                            Product product = new Product(id, name, cost, price, type, quantity, size, info, avatarPath);
                             products.Add(product);
                         }
                     }
@@ -92,6 +94,7 @@ namespace Controllers
 
                     command.Parameters.AddWithValue("@Id", product.Id);
                     command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Cost", product.Cost);
                     command.Parameters.AddWithValue("@Price", product.Price);
                     command.Parameters.AddWithValue("@Type", product.Type);
                     command.Parameters.AddWithValue("@Quantity", product.Quantity);
@@ -130,6 +133,7 @@ namespace Controllers
 
                     command.Parameters.AddWithValue("@Id", product.Id);
                     command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Cost", product.Cost);
                     command.Parameters.AddWithValue("@Price", product.Price);
                     command.Parameters.AddWithValue("@Type", product.Type);
                     command.Parameters.AddWithValue("@Quantity", product.Quantity);
@@ -155,6 +159,25 @@ namespace Controllers
 
                 }
             }
+        }
+
+        public int GetCostInt(string costStr)
+        {
+            string currencyStr = costStr;
+
+            // Xóa ký tự mẫu của tiền tệ (VD: "$", "€", "₫")
+            currencyStr = currencyStr.Replace("₫", "").Trim();
+
+            // Loại bỏ ký tự phân cách hàng nghìn
+            currencyStr = currencyStr.Replace(".", "");
+
+            // Thay thế dấu phân cách thập phân
+            currencyStr = currencyStr.Replace(",", ".");
+
+            // Chuyển đổi chuỗi thành số
+            decimal number = decimal.Parse(currencyStr, CultureInfo.InvariantCulture);
+
+            return (int)number;
         }
 
         public int GetPriceInt(string priceStr)
@@ -292,13 +315,14 @@ namespace Controllers
                             {
                                 var id = reader["Id"].ToString();
                                 var name = reader["Name"].ToString();
+                                var cost = (int)reader["Cost"];
                                 var price = (int)reader["Price"];
                                 var type = reader["Type"].ToString();
                                 var quantity =(int) reader["Quantity"];
                                 var size = reader["Size"].ToString();
                                 var info = reader["Info"].ToString();
                                 var avatarPath = reader["AvatarPath"].ToString();
-                                Product prod = new Product(id,name,price,type,quantity,size,info,avatarPath);
+                                Product prod = new Product(id,name,cost,price,type,quantity,size,info,avatarPath);
                                 products.Add(prod);
                             }
                         }
@@ -331,13 +355,14 @@ namespace Controllers
                             {
                                 var id = reader["Id"].ToString();
                                 var name = reader["Name"].ToString();
+                                var cost = (int)reader["Cost"];
                                 var price = (int)reader["Price"];
                                 var type = reader["Type"].ToString();
                                 var quantity = (int)reader["Quantity"];
                                 var size = reader["Size"].ToString();
                                 var info = reader["Info"].ToString();
                                 var avatarPath = reader["AvatarPath"].ToString();
-                                Product prod = new Product(id, name, price, type, quantity, size, info, avatarPath);
+                                Product prod = new Product(id, name, cost, price, type, quantity, size, info, avatarPath);
                                 products.Add(prod);
                             }
                         }

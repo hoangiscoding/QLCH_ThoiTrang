@@ -42,6 +42,7 @@ namespace Controllers
                     command.Parameters.AddWithValue("@ProductId", importGood.Product.Id);
                     command.Parameters.AddWithValue("@ImportTime", importGood.ImportTime);
                     command.Parameters.AddWithValue("@Quantity", importGood.Quantity);
+                    command.Parameters.AddWithValue("@Total", importGood.Total);
                     //thực thi
                     try
                     {
@@ -89,10 +90,11 @@ namespace Controllers
                             var productId = reader["ProductId"].ToString();
                             DateTime importTime = (DateTime)reader["ImportTime"];
                             var quantity = (int)reader["Quantity"];
+                            var total = (int)reader["Total"];
                             Staff = FindStaff(staffId);
                             Product = FindProduct(productId);
                             ImportGood import = new ImportGood(id,Staff,
-                                Product,importTime,quantity);
+                                Product,importTime,quantity, total);
                             importGoods.Add(import);
                         }
                     }
@@ -191,9 +193,10 @@ namespace Controllers
                                 var productId = reader["ProductId"].ToString();
                                 DateTime importTime = (DateTime)reader["ImportTime"];
                                 var quantity = (int)reader["Quantity"];
+                                var total = (int)reader["Total"];
                                 Staff = FindStaff(staffId);
                                 Product = FindProduct(productId);
-                                ImportGood import = new ImportGood(id, Staff, Product, importTime, quantity);
+                                ImportGood import = new ImportGood(id, Staff, Product, importTime, quantity, total);
                                 importGoods.Add(import);
                             }
                         }
@@ -229,9 +232,10 @@ namespace Controllers
                                 var productId = reader["ProductId"].ToString();
                                 DateTime importTime = (DateTime)reader["ImportTime"];
                                 var quantity = (int)reader["Quantity"];
+                                var total = (int)reader["Total"];
                                 Staff = FindStaff(staffId);
                                 Product = FindProduct(productId);
-                                ImportGood import = new ImportGood(id, Staff, Product, importTime, quantity);
+                                ImportGood import = new ImportGood(id, Staff, Product, importTime, quantity, total);
                                 importGoods.Add(import);
                             }
                         }
@@ -267,9 +271,10 @@ namespace Controllers
                                 var productId = reader["ProductId"].ToString();
                                 DateTime importTime = (DateTime)reader["ImportTime"];
                                 var quantity = (int)reader["Quantity"];
+                                var total = (int)reader["Total"];
                                 Staff = FindStaff(staffId);
                                 Product = FindProduct(productId);
-                                ImportGood import = new ImportGood(id, Staff, Product, importTime, quantity);
+                                ImportGood import = new ImportGood(id, Staff, Product, importTime, quantity, total);
                                 importGoods.Add(import);
                             }
                         }

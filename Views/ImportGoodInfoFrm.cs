@@ -105,7 +105,7 @@ namespace Views
                         exSheet.Range["C" + (row).ToString()].Value = itImportGoodInfo.ImportGood.Product.Name.ToString();
                         exSheet.Range["D" + (row).ToString()].Value = itImportGoodInfo.ImportGood.Quantity.ToString();
                         exSheet.Range["E" + (row).ToString()].Value = itImportGoodInfo.ImportGood.Product.Price;
-                        exSheet.Range["F" + (row).ToString()].Value = itImportGoodInfo.Sum.ToString();
+                        exSheet.Range["F" + (row).ToString()].Value = itImportGoodInfo.Total.ToString();
                         row++;
                         stt++;
                     }

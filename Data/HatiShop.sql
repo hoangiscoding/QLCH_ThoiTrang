@@ -36,6 +36,7 @@ CREATE TABLE Staff (
 CREATE TABLE Product (
     Id varchar(50) PRIMARY KEY,
     Name nvarchar(100) NOT NULL,
+	Cost int NOT NULL DEFAULT 0,
     Price int NOT NULL,
     [Type] nvarchar(50),
     Quantity int DEFAULT 0,
@@ -50,9 +51,11 @@ CREATE TABLE ImportGood (
     ProductId varchar(50) NOT NULL,
     ImportTime datetime NOT NULL,
     Quantity int NOT NULL,
+	Total int not null default 0,
     FOREIGN KEY (StaffId) REFERENCES Staff(Id),
     FOREIGN KEY (ProductId) REFERENCES Product(Id)
 );
+
 
 CREATE TABLE Bill (
     Id varchar(50) PRIMARY KEY,

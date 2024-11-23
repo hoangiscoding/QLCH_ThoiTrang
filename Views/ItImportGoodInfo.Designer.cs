@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelImportGood = new System.Windows.Forms.Panel();
-            this.txtSum = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.Label();
             this.txtProductSize = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             // panelImportGood
             // 
             this.panelImportGood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(102)))), ((int)(((byte)(131)))));
-            this.panelImportGood.Controls.Add(this.txtSum);
+            this.panelImportGood.Controls.Add(this.txtTotal);
             this.panelImportGood.Controls.Add(this.txtQuantity);
             this.panelImportGood.Controls.Add(this.txtProductSize);
             this.panelImportGood.Controls.Add(this.txtProductName);
@@ -52,16 +52,16 @@
             this.panelImportGood.TabIndex = 25;
             this.panelImportGood.Click += new System.EventHandler(this.panelImportGood_Click);
             // 
-            // txtSum
+            // txtTotal
             // 
-            this.txtSum.AutoSize = true;
-            this.txtSum.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
-            this.txtSum.Location = new System.Drawing.Point(706, 13);
-            this.txtSum.Name = "txtSum";
-            this.txtSum.Size = new System.Drawing.Size(119, 30);
-            this.txtSum.TabIndex = 2;
-            this.txtSum.Text = "Thành tiền";
+            this.txtTotal.AutoSize = true;
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.txtTotal.Location = new System.Drawing.Point(706, 13);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(119, 30);
+            this.txtTotal.TabIndex = 2;
+            this.txtTotal.Text = "Thành tiền";
             // 
             // txtQuantity
             // 
@@ -128,7 +128,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panelImportGood;
-        private System.Windows.Forms.Label txtSum;
+        private System.Windows.Forms.Label txtTotal;
         private System.Windows.Forms.Label txtQuantity;
         private System.Windows.Forms.Label txtProductSize;
         private System.Windows.Forms.Label txtProductName;

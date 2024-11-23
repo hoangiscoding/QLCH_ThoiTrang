@@ -16,9 +16,10 @@ namespace Models
         public string ProductId { get; set; }
         public DateTime ImportTime { get; set; }
         public int Quantity { get; set; }
+        public int Total { get; set; }
         public ImportGood() { }
         public ImportGood(string id, Staff staff,
-            Product product, DateTime importTime, int quantity)
+            Product product, DateTime importTime, int quantity, int total)
         {
             Id = id;
             IdInt = GetIdInt(Id);
@@ -26,9 +27,10 @@ namespace Models
             Product = product;
             ImportTime = importTime;
             Quantity = quantity;
+            Total = Product.Cost * quantity;
         }
         public ImportGood(string id, string staffId,
-            string productId, DateTime importTime, int quantity)
+            string productId, DateTime importTime, int quantity, int total)
         {
             Id = id;
             IdInt = GetIdInt(Id);
@@ -36,9 +38,10 @@ namespace Models
             ProductId = productId;
             ImportTime = importTime;
             Quantity = quantity;
+            Total = total;
         }
         public ImportGood(int currId, string staffId,
-            string productId, DateTime importTime, int quantity)
+            string productId, DateTime importTime, int quantity, int total)
         {
             Id = "IM" + ++currId;
             IdInt = GetIdInt(Id);
@@ -46,6 +49,7 @@ namespace Models
             Product.Id = productId;
             ImportTime = importTime;
             Quantity = quantity;
+            Total = total;
         }
         public int GetIdInt(string idStr)
         {

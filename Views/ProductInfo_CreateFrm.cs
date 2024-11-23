@@ -51,6 +51,7 @@ namespace Views
         {
             txtProductId.Text = product.Id;
             txtProductName.Text = product.Name;
+            txtProductCost.Text = product.CostStr;
             txtProductPrice.Text = product.PriceStr;
             txtProductQuantity.Text = product.Quantity.ToString();
             txtProductMoreInfo.Text = product.Info;
@@ -124,7 +125,9 @@ namespace Views
             bool success = true;
             var id = txtProductId.Text;
             var name = txtProductName.Text;
+            string costStr = txtProductCost.Text;
             string priceStr = txtProductPrice.Text;
+            int cost = productController.GetCostInt(costStr);
             int price = productController.GetPriceInt(priceStr);
             int quantity = int.Parse(txtProductQuantity.Text);
             string info = txtProductMoreInfo.Text;
@@ -160,7 +163,7 @@ namespace Views
 
             if (success)
             {
-                Product product = new Product(id, name, price, type, quantity, size, info, avatarPath);
+                Product product = new Product(id, name, cost, price, type, quantity, size, info, avatarPath);
                 productController.EditProductInfo(product);
                 MessageBox.Show("Sửa sản phẩm thành công! Vui lòng load lại trang để xem thông tin sản phẩm");
                 this.Dispose();
@@ -177,6 +180,7 @@ namespace Views
             bool success = true;
             var id = txtProductId.Text;
             var name = txtProductName.Text;
+            int cost = int.Parse(txtProductCost.Text);
             int price = int.Parse(txtProductPrice.Text);
             int quantity = int.Parse(txtProductQuantity.Text);
             string info = txtProductMoreInfo.Text;
@@ -212,7 +216,7 @@ namespace Views
 
             if (success)
             {
-                Product product = new Product(id, name, price, type, quantity, size, info, avatarPath);
+                Product product = new Product(id, name, cost, price, type, quantity, size, info, avatarPath);
                 productController.CreateNewProduct(product);
                 MessageBox.Show("Đăng ký thành công!");
                 this.Dispose();

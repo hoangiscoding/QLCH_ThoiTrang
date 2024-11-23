@@ -34,8 +34,10 @@
             this.btnRemoveProduct = new System.Windows.Forms.Button();
             this.btnAddEditProduct = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtProductCost = new System.Windows.Forms.TextBox();
             this.txtProductMoreInfo = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboProductSize = new System.Windows.Forms.ComboBox();
             this.comboProductType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,7 +68,7 @@
             this.panel1.Controls.Add(this.labelHeader);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 800);
+            this.panel1.Size = new System.Drawing.Size(1000, 739);
             this.panel1.TabIndex = 1;
             // 
             // btnExist
@@ -89,7 +91,7 @@
             this.btnRemoveProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnRemoveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveProduct.Location = new System.Drawing.Point(707, 688);
+            this.btnRemoveProduct.Location = new System.Drawing.Point(707, 659);
             this.btnRemoveProduct.Name = "btnRemoveProduct";
             this.btnRemoveProduct.Size = new System.Drawing.Size(261, 50);
             this.btnRemoveProduct.TabIndex = 12;
@@ -105,7 +107,7 @@
             this.btnAddEditProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEditProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnAddEditProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEditProduct.Location = new System.Drawing.Point(405, 688);
+            this.btnAddEditProduct.Location = new System.Drawing.Point(402, 659);
             this.btnAddEditProduct.Name = "btnAddEditProduct";
             this.btnAddEditProduct.Size = new System.Drawing.Size(261, 50);
             this.btnAddEditProduct.TabIndex = 12;
@@ -116,8 +118,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtProductCost);
             this.panel2.Controls.Add(this.txtProductMoreInfo);
             this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.comboProductSize);
             this.panel2.Controls.Add(this.comboProductType);
             this.panel2.Controls.Add(this.label7);
@@ -130,17 +134,25 @@
             this.panel2.Controls.Add(this.txtProductId);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(387, 111);
+            this.panel2.Location = new System.Drawing.Point(367, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(601, 564);
+            this.panel2.Size = new System.Drawing.Size(601, 552);
             this.panel2.TabIndex = 2;
+            // 
+            // txtProductCost
+            // 
+            this.txtProductCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProductCost.Location = new System.Drawing.Point(320, 145);
+            this.txtProductCost.Name = "txtProductCost";
+            this.txtProductCost.Size = new System.Drawing.Size(270, 35);
+            this.txtProductCost.TabIndex = 17;
             // 
             // txtProductMoreInfo
             // 
             this.txtProductMoreInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProductMoreInfo.Location = new System.Drawing.Point(18, 338);
+            this.txtProductMoreInfo.Location = new System.Drawing.Point(18, 405);
             this.txtProductMoreInfo.Name = "txtProductMoreInfo";
-            this.txtProductMoreInfo.Size = new System.Drawing.Size(563, 198);
+            this.txtProductMoreInfo.Size = new System.Drawing.Size(563, 131);
             this.txtProductMoreInfo.TabIndex = 16;
             this.txtProductMoreInfo.Text = "";
             // 
@@ -149,11 +161,22 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(13, 294);
+            this.label8.Location = new System.Drawing.Point(12, 370);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(237, 28);
+            this.label8.Size = new System.Drawing.Size(284, 32);
             this.label8.TabIndex = 15;
             this.label8.Text = "THÔNG TIN SẢN PHẨM";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(314, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 32);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "ĐƠN GIÁ NHẬP";
             // 
             // comboProductSize
             // 
@@ -167,7 +190,7 @@
             "XXXL"});
             this.comboProductSize.Location = new System.Drawing.Point(319, 234);
             this.comboProductSize.Name = "comboProductSize";
-            this.comboProductSize.Size = new System.Drawing.Size(270, 31);
+            this.comboProductSize.Size = new System.Drawing.Size(270, 36);
             this.comboProductSize.TabIndex = 14;
             // 
             // comboProductType
@@ -179,9 +202,9 @@
             "Nón",
             "Giày",
             "Combo"});
-            this.comboProductType.Location = new System.Drawing.Point(319, 145);
+            this.comboProductType.Location = new System.Drawing.Point(18, 319);
             this.comboProductType.Name = "comboProductType";
-            this.comboProductType.Size = new System.Drawing.Size(270, 31);
+            this.comboProductType.Size = new System.Drawing.Size(270, 36);
             this.comboProductType.TabIndex = 13;
             // 
             // label7
@@ -191,7 +214,7 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(314, 196);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 28);
+            this.label7.Size = new System.Drawing.Size(112, 32);
             this.label7.TabIndex = 12;
             this.label7.Text = "KÍCH CỠ";
             // 
@@ -200,9 +223,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(314, 106);
+            this.label6.Location = new System.Drawing.Point(13, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 28);
+            this.label6.Size = new System.Drawing.Size(204, 32);
             this.label6.TabIndex = 11;
             this.label6.Text = "LOẠI SẢN PHẨM";
             // 
@@ -212,7 +235,7 @@
             this.txtProductQuantity.Enabled = false;
             this.txtProductQuantity.Location = new System.Drawing.Point(18, 235);
             this.txtProductQuantity.Name = "txtProductQuantity";
-            this.txtProductQuantity.Size = new System.Drawing.Size(270, 30);
+            this.txtProductQuantity.Size = new System.Drawing.Size(270, 35);
             this.txtProductQuantity.TabIndex = 9;
             // 
             // label5
@@ -222,7 +245,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(13, 196);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 28);
+            this.label5.Size = new System.Drawing.Size(138, 32);
             this.label5.TabIndex = 10;
             this.label5.Text = "SỐ LƯỢNG";
             // 
@@ -231,7 +254,7 @@
             this.txtProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductPrice.Location = new System.Drawing.Point(18, 145);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(270, 30);
+            this.txtProductPrice.Size = new System.Drawing.Size(270, 35);
             this.txtProductPrice.TabIndex = 7;
             // 
             // label3
@@ -241,16 +264,16 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(13, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 28);
+            this.label3.Size = new System.Drawing.Size(177, 32);
             this.label3.TabIndex = 8;
-            this.label3.Text = "GIÁ SẢN PHẨM";
+            this.label3.Text = "ĐƠN GIÁ BÁN";
             // 
             // txtProductName
             // 
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductName.Location = new System.Drawing.Point(319, 52);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(270, 30);
+            this.txtProductName.Size = new System.Drawing.Size(270, 35);
             this.txtProductName.TabIndex = 6;
             // 
             // txtProductId
@@ -259,7 +282,7 @@
             this.txtProductId.Enabled = false;
             this.txtProductId.Location = new System.Drawing.Point(18, 52);
             this.txtProductId.Name = "txtProductId";
-            this.txtProductId.Size = new System.Drawing.Size(270, 30);
+            this.txtProductId.Size = new System.Drawing.Size(270, 35);
             this.txtProductId.TabIndex = 0;
             // 
             // label4
@@ -269,7 +292,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(314, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 28);
+            this.label4.Size = new System.Drawing.Size(196, 32);
             this.label4.TabIndex = 5;
             this.label4.Text = "TÊN SẢN PHẨM";
             // 
@@ -280,7 +303,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(13, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 28);
+            this.label2.Size = new System.Drawing.Size(190, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "MÃ SẢN PHẨM";
             // 
@@ -300,17 +323,17 @@
             this.labelHeader.AutoSize = true;
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.White;
-            this.labelHeader.Location = new System.Drawing.Point(563, 49);
+            this.labelHeader.Location = new System.Drawing.Point(502, 12);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(274, 45);
+            this.labelHeader.Size = new System.Drawing.Size(331, 54);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "SẢN PHẨM MỚI";
             // 
             // ProductInfo_CreateFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 800);
+            this.ClientSize = new System.Drawing.Size(1000, 739);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -349,5 +372,7 @@
         private System.Windows.Forms.Button btnAddEditProduct;
         private System.Windows.Forms.Button btnExist;
         private System.Windows.Forms.Button btnRemoveProduct;
+        private System.Windows.Forms.TextBox txtProductCost;
+        private System.Windows.Forms.Label label1;
     }
 }

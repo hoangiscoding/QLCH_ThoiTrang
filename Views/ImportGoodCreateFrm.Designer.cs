@@ -46,7 +46,7 @@
             this.btnRemoveImportGood = new System.Windows.Forms.Button();
             this.btnAddEditImportGood = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.txtPrice = new System.Windows.Forms.Label();
+            this.txtCost = new System.Windows.Forms.Label();
             this.comboIdNameSizeQuantityProduct = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -253,20 +253,21 @@
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.txtPrice);
+            this.panel11.Controls.Add(this.txtCost);
             this.panel11.Location = new System.Drawing.Point(15, 149);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(407, 33);
+            this.panel11.Size = new System.Drawing.Size(407, 32);
             this.panel11.TabIndex = 4;
             // 
-            // txtPrice
+            // txtCost
             // 
-            this.txtPrice.AutoSize = true;
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(5, 4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(0, 30);
-            this.txtPrice.TabIndex = 3;
+            this.txtCost.AutoSize = true;
+            this.txtCost.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost.Location = new System.Drawing.Point(5, 4);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(68, 30);
+            this.txtCost.TabIndex = 3;
+            this.txtCost.Text = "10000";
             // 
             // comboIdNameSizeQuantityProduct
             // 
@@ -473,7 +474,7 @@
         private System.Windows.Forms.Button btnRemoveImportGood;
         private System.Windows.Forms.Button btnAddEditImportGood;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label txtPrice;
+        private System.Windows.Forms.Label txtCost;
         private System.Windows.Forms.ComboBox comboIdNameSizeQuantityProduct;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label24;

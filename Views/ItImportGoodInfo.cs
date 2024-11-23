@@ -16,7 +16,7 @@ namespace Views
     {
         public ImportGood ImportGood { get; set; }
         private ImportGoodCreateFrm parentForm;
-        public int Sum { get; set; }
+        public int Total { get; set; }
         public ItImportGoodInfo(ImportGood import, ImportGoodCreateFrm parentForm)
         {
             InitializeComponent();
@@ -38,17 +38,17 @@ namespace Views
             txtProductName.Text = ImportGood.Product.Name;
             txtProductSize.Text = ImportGood.Product.Size;
             txtQuantity.Text = ImportGood.Quantity.ToString();
-            Sum = ImportGood.Quantity * ImportGood.Product.Price;
-            string sum = GetPriceStr(Sum);
-            txtSum.Text = sum;
+            Total = ImportGood.Quantity * ImportGood.Product.Cost;
+            string total = GetCostStr(Total);
+            txtTotal.Text = total;
         }
-        public string GetPriceStr(int price)
+        public string GetCostStr(int cost)
         {
-            var priceStr = price.ToString();
-            decimal number = decimal.Parse(priceStr);
+            var costStr = cost.ToString();
+            decimal number = decimal.Parse(costStr);
             CultureInfo cultureInfo = new CultureInfo("vi-VN"); // Chọn ngôn ngữ Việt Nam để hiển thị định dạng tiền tệ
-            string priceFormatted = string.Format(cultureInfo, "{0:C}", number); // Sử dụng định dạng tiền tệ
-            return priceFormatted;
+            string costFormatted = string.Format(cultureInfo, "{0:C}", number); // Sử dụng định dạng tiền tệ
+            return costFormatted;
         }
 
         private void panelImportGood_Click(object sender, EventArgs e)

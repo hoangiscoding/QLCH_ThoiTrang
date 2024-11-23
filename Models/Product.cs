@@ -13,6 +13,8 @@ namespace Models
         public string Id { get; set; }
         public int IdInt { get; set; }
         public string Name { get; set; }
+        public int Cost { get; set; }
+        public string CostStr { get; set; }
         public int Price { get; set; }
         public string PriceStr { get; set; }
         public string Type { get; set; }
@@ -21,13 +23,15 @@ namespace Models
         public string Info { get; set; }
         public string AvatarPath { get; set; }
         public Product() { }
-        public Product(string id, string name, int price, string type,
+        public Product(string id, string name, int cost, int price, string type,
             int quantity, string size, string info, string avatarPath)
         {
             Id = id;
             IdInt = GetIdInt(Id);
             Name = name;
+            Cost = cost;
             Price = price;
+            CostStr = GetCostStr(Cost);
             PriceStr = GetPriceStr(Price);
             Type = type;
             Quantity = quantity;
@@ -35,7 +39,7 @@ namespace Models
             Info = info;
             AvatarPath = avatarPath;
         }
-        public Product(int currId, string name, int price, string type,
+        public Product(int currId, string name, int cost, int price, string type,
             int quantity, string size, string info, string avatarPath)
         {
             AutoId = currId;
@@ -43,7 +47,9 @@ namespace Models
             IdInt = GetIdInt(Id);
             IdInt = GetIdInt(Id);
             Name = name;
+            Cost = cost;
             Price = price;
+            CostStr = GetCostStr(Cost);
             PriceStr = GetPriceStr(Price);
             Type = type;
             Quantity = quantity;
@@ -64,6 +70,14 @@ namespace Models
             string priceFormatted = string.Format(cultureInfo, "{0:C}", number); // Sử dụng định dạng tiền tệ
             return priceFormatted;
         }
+        public string GetCostStr(int cost)
+        {
+            var costStr = cost.ToString();
+            decimal number = decimal.Parse(costStr);
+            CultureInfo cultureInfo = new CultureInfo("vi-VN"); // Chọn ngôn ngữ Việt Nam để hiển thị định dạng tiền tệ
+            string costFormatted = string.Format(cultureInfo, "{0:C}", number); // Sử dụng định dạng tiền tệ
+            return costFormatted;
 
+        }
     }
 }

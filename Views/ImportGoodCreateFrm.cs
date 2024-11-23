@@ -38,8 +38,7 @@ namespace Views
         {
 
             this.importGood = importGood;
-
-            txtPrice.Text = importGood.Product.PriceStr;
+            txtCost.Text = importGood.Product.CostStr;
             txtQuantity.Text = importGood.Quantity + "";
             txtImportGoodId.Text = importGood.Id;
             comboIdNameSizeQuantityProduct.Items.Clear();
@@ -113,7 +112,7 @@ namespace Views
             product = productController.FindProductById(products, id);
             if (product != null)
             {
-                txtPrice.Text = product.PriceStr;
+                txtCost.Text = product.CostStr;
             }
         }
 
@@ -174,7 +173,7 @@ namespace Views
             }
             var staffId = GetIdOfComboStaff(comboIdNameStaff.Text.ToString());
             staff = staffController.FindStaffById(staffs, staffId);
-            ImportGood importGood = new ImportGood(id, staff, product, time, quantity);
+            ImportGood importGood = new ImportGood(id, staff, product, time, quantity, total);
             if (success)
             {
                 imController.CreateNewImportGood(importGood);
@@ -200,30 +199,30 @@ namespace Views
         {
             comboIdNameSizeQuantityProduct.Text = "";
             txtQuantity.Text = "";
-            txtPrice.Text = "";
+            txtCost.Text = "";
         }
 
-        public string GetPriceStr(int price)
+        public string GetCostStr(int cost)
         {
-            var priceStr = price.ToString();
-            decimal number = decimal.Parse(priceStr);
+            var costStr = cost.ToString();
+            decimal number = decimal.Parse(costStr);
             CultureInfo cultureInfo = new CultureInfo("vi-VN"); // Chọn ngôn ngữ Việt Nam để hiển thị định dạng tiền tệ
-            string priceFormatted = string.Format(cultureInfo, "{0:C}", number); // Sử dụng định dạng tiền tệ
-            return priceFormatted;
+            string costFormatted = string.Format(cultureInfo, "{0:C}", number); // Sử dụng định dạng tiền tệ
+            return costFormatted;
         }
-        public int GetPriceInt(string priceStr)
+        public int GetcostInt(string costStr)
         {
             // Xóa ký tự mẫu của tiền tệ (VD: "$", "€", "₫")
-            priceStr = priceStr.Replace("₫", "").Trim();
+            costStr = costStr.Replace("₫", "").Trim();
 
             // Loại bỏ ký tự phân cách hàng nghìn
-            priceStr = priceStr.Replace(".", "");
+            costStr = costStr.Replace(".", "");
 
             // Thay thế dấu phân cách thập phân
-            priceStr = priceStr.Replace(",", ".");
+            costStr = costStr.Replace(",", ".");
 
             // Chuyển đổi chuỗi thành số
-            int number = (int)decimal.Parse(priceStr, CultureInfo.InvariantCulture);
+            int number = (int)decimal.Parse(costStr, CultureInfo.InvariantCulture);
             return number;
         }
 
@@ -248,8 +247,8 @@ namespace Views
                 imController.RemoveImportGood(importGood);
 
                 //xử lý giảm tiền
-                total -= importGood.Quantity * importGood.Product.Price;
-                var totalStr = GetPriceStr(total);
+                total -= importGood.Quantity * importGood.Product.Cost;
+                var totalStr = GetCostStr(total);
 
                 //remove khỏi flowpanel
                 // Tìm panel có ID trùng khớp

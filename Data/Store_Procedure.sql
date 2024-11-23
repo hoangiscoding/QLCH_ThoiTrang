@@ -41,6 +41,7 @@ END;
 CREATE PROC CreateNewProduct
 	@Id varchar(50),
 	@Name nvarchar(100),
+	@Cost int,
 	@Price int,
 	@Type nvarchar(50),
 	@Quantity int,
@@ -49,21 +50,22 @@ CREATE PROC CreateNewProduct
 	@AvatarPath nvarchar(MAX)
 AS
 BEGIN
-	INSERT Product(Id,Name,Price,Type,Quantity,Size,Info,AvatarPath)
-	VALUES(@Id,@Name,@Price,@Type,@Quantity,@Size,@Info,@AvatarPath)
+	INSERT Product(Id,Name,Cost,Price,Type,Quantity,Size,Info,AvatarPath)
+	VALUES(@Id,@Name,@Cost,@Price,@Type,@Quantity,@Size,@Info,@AvatarPath)
 END;
 
 --Tạo mới nhập hàng
-CREATE PROC CreateNewImportGood
+CREATE PROCEDURE CreateNewImportGood
 	@Id varchar(50),
 	@StaffId varchar(50),
 	@ProductId varchar(50),
 	@ImportTime datetime,
-	@Quantity int
+	@Quantity int,
+	@Total int
 AS
 BEGIN
-	INSERT ImportGood(Id,StaffId,ProductId,ImportTime,Quantity)
-	VALUES(@Id,@StaffId,@ProductId,@ImportTime,@Quantity)
+	INSERT ImportGood(Id,StaffId,ProductId,ImportTime,Quantity,Total)
+	VALUES(@Id,@StaffId,@ProductId,@ImportTime,@Quantity,@Total)
 	
 	--sửa thông tin về số lượng sản phẩm 
 	UPDATE 
@@ -101,6 +103,7 @@ BEGIN
 END;
 
 DROP PROC CreateNewBillDetail
+
 --Thanh toán bill
 CREATE PROC PayBill
 	@Id varchar(50),
@@ -120,6 +123,7 @@ BEGIN
 END;
 
 DROP PROC PayBill
+
 --Update revenue cho khách hàng
 CREATE PROC UpdatePaymentCustomer
 	@DiscountedTotal float,
@@ -264,7 +268,7 @@ CREATE PROC LoadProduct
 AS
 BEGIN
 	SELECT
-		Id, Name,Price,Type,Quantity,Size,Info,AvatarPath
+		Id, Name,Cost,Price,Type,Quantity,Size,Info,AvatarPath
 	FROM Product
 END;
 
@@ -273,7 +277,7 @@ CREATE PROC LoadImportGood
 AS
 BEGIN
 	SELECT 
-		Id, StaffId, ProductId,ImportTime,Quantity
+		Id, StaffId, ProductId,ImportTime,Quantity,Total
 	FROM
 		ImportGood
 END;
@@ -358,6 +362,7 @@ END
 CREATE PROC EditProductInfo
 	@Id varchar(50),
 	@Name nvarchar(100),
+	@Cost int,
 	@Price int,
 	@Type nvarchar(50),
 	@Quantity int,
@@ -369,6 +374,7 @@ BEGIN
 	UPDATE Product
 	SET
 		Name = @Name,
+		Cost = @Cost,
 		Price = @Price,
 		Type = @Type,
 		Quantity = @Quantity,
