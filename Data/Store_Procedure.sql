@@ -748,6 +748,14 @@ BEGIN
 	WHERE DAY(CreationTime) = @Date
 END;
 
+--Xóa đơn nhập
+CREATE PROCEDURE RemoveImport
+	@Id varchar(50)
+AS
+BEGIN
+	DELETE FROM ImportGood WHERE Id = @Id
+END
+
 --Xóa đơn hàng
 CREATE PROCEDURE RemoveBill
     @Id NVARCHAR(50)

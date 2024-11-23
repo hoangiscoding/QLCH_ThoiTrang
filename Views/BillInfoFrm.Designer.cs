@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRemoveBill = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.Label();
             this.txtOriginalPrice = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRemoveBill = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -91,8 +91,24 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 800);
+            this.panel1.Size = new System.Drawing.Size(1000, 758);
             this.panel1.TabIndex = 0;
+            // 
+            // btnRemoveBill
+            // 
+            this.btnRemoveBill.BackColor = System.Drawing.Color.White;
+            this.btnRemoveBill.FlatAppearance.BorderSize = 0;
+            this.btnRemoveBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnRemoveBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveBill.Location = new System.Drawing.Point(386, 650);
+            this.btnRemoveBill.Name = "btnRemoveBill";
+            this.btnRemoveBill.Size = new System.Drawing.Size(167, 44);
+            this.btnRemoveBill.TabIndex = 25;
+            this.btnRemoveBill.Text = "XÓA";
+            this.btnRemoveBill.UseVisualStyleBackColor = false;
+            this.btnRemoveBill.Click += new System.EventHandler(this.btnRemoveBill_Click);
             // 
             // btnPrint
             // 
@@ -102,7 +118,7 @@
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(213, 674);
+            this.btnPrint.Location = new System.Drawing.Point(213, 650);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(167, 44);
             this.btnPrint.TabIndex = 12;
@@ -115,7 +131,7 @@
             this.txtTotal.AutoSize = true;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtTotal.ForeColor = System.Drawing.Color.White;
-            this.txtTotal.Location = new System.Drawing.Point(803, 736);
+            this.txtTotal.Location = new System.Drawing.Point(803, 712);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(70, 25);
             this.txtTotal.TabIndex = 24;
@@ -127,7 +143,7 @@
             this.txtOriginalPrice.AutoSize = true;
             this.txtOriginalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtOriginalPrice.ForeColor = System.Drawing.Color.White;
-            this.txtOriginalPrice.Location = new System.Drawing.Point(803, 680);
+            this.txtOriginalPrice.Location = new System.Drawing.Point(803, 656);
             this.txtOriginalPrice.Name = "txtOriginalPrice";
             this.txtOriginalPrice.Size = new System.Drawing.Size(70, 25);
             this.txtOriginalPrice.TabIndex = 23;
@@ -139,7 +155,7 @@
             this.txtDiscountAmount.AutoSize = true;
             this.txtDiscountAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDiscountAmount.ForeColor = System.Drawing.Color.White;
-            this.txtDiscountAmount.Location = new System.Drawing.Point(803, 708);
+            this.txtDiscountAmount.Location = new System.Drawing.Point(803, 684);
             this.txtDiscountAmount.Name = "txtDiscountAmount";
             this.txtDiscountAmount.Size = new System.Drawing.Size(97, 25);
             this.txtDiscountAmount.TabIndex = 21;
@@ -151,7 +167,7 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(626, 674);
+            this.panel4.Location = new System.Drawing.Point(626, 650);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(171, 94);
             this.panel4.TabIndex = 22;
@@ -197,7 +213,7 @@
             this.btnDeleteBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnDeleteBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteBill.Location = new System.Drawing.Point(40, 674);
+            this.btnDeleteBill.Location = new System.Drawing.Point(40, 650);
             this.btnDeleteBill.Name = "btnDeleteBill";
             this.btnDeleteBill.Size = new System.Drawing.Size(167, 44);
             this.btnDeleteBill.TabIndex = 11;
@@ -210,7 +226,7 @@
             this.flowPanelProductInBill.AutoScroll = true;
             this.flowPanelProductInBill.Location = new System.Drawing.Point(40, 407);
             this.flowPanelProductInBill.Name = "flowPanelProductInBill";
-            this.flowPanelProductInBill.Size = new System.Drawing.Size(920, 261);
+            this.flowPanelProductInBill.Size = new System.Drawing.Size(920, 237);
             this.flowPanelProductInBill.TabIndex = 3;
             // 
             // panel3
@@ -461,27 +477,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "HOÁ ĐƠN";
             // 
-            // btnRemoveBill
-            // 
-            this.btnRemoveBill.BackColor = System.Drawing.Color.White;
-            this.btnRemoveBill.FlatAppearance.BorderSize = 0;
-            this.btnRemoveBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
-            this.btnRemoveBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveBill.Location = new System.Drawing.Point(386, 674);
-            this.btnRemoveBill.Name = "btnRemoveBill";
-            this.btnRemoveBill.Size = new System.Drawing.Size(167, 44);
-            this.btnRemoveBill.TabIndex = 25;
-            this.btnRemoveBill.Text = "XÓA";
-            this.btnRemoveBill.UseVisualStyleBackColor = false;
-            this.btnRemoveBill.Click += new System.EventHandler(this.btnRemoveBill_Click);
-            // 
             // BillInfoFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 800);
+            this.ClientSize = new System.Drawing.Size(1000, 756);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

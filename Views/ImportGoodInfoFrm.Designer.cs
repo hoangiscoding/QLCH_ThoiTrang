@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnExist = new System.Windows.Forms.Button();
             this.flowPanelImportGood = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,7 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnRemoveImport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.btnRemoveImport);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnExist);
             this.panel1.Controls.Add(this.flowPanelImportGood);
@@ -69,8 +71,24 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 576);
+            this.panel1.Size = new System.Drawing.Size(1000, 573);
             this.panel1.TabIndex = 1;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.White;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(100, 502);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(180, 50);
+            this.btnPrint.TabIndex = 12;
+            this.btnPrint.Text = "IN";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnExist
             // 
@@ -80,9 +98,9 @@
             this.btnExist.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnExist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExist.Location = new System.Drawing.Point(555, 502);
+            this.btnExist.Location = new System.Drawing.Point(711, 502);
             this.btnExist.Name = "btnExist";
-            this.btnExist.Size = new System.Drawing.Size(261, 50);
+            this.btnExist.Size = new System.Drawing.Size(180, 50);
             this.btnExist.TabIndex = 11;
             this.btnExist.Text = "THOÁT";
             this.btnExist.UseVisualStyleBackColor = false;
@@ -264,7 +282,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(357, 6);
+            this.label8.Location = new System.Drawing.Point(343, 5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(277, 30);
             this.label8.TabIndex = 0;
@@ -273,29 +291,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(337, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 54);
+            this.label1.Size = new System.Drawing.Size(356, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "PHIẾU NHẬP HÀNG";
             // 
-            // btnPrint
+            // btnRemoveImport
             // 
-            this.btnPrint.BackColor = System.Drawing.Color.White;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(179, 502);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(261, 50);
-            this.btnPrint.TabIndex = 12;
-            this.btnPrint.Text = "IN";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnRemoveImport.BackColor = System.Drawing.Color.White;
+            this.btnRemoveImport.FlatAppearance.BorderSize = 0;
+            this.btnRemoveImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveImport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnRemoveImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveImport.Location = new System.Drawing.Point(402, 502);
+            this.btnRemoveImport.Name = "btnRemoveImport";
+            this.btnRemoveImport.Size = new System.Drawing.Size(180, 50);
+            this.btnRemoveImport.TabIndex = 13;
+            this.btnRemoveImport.Text = "XÓA";
+            this.btnRemoveImport.UseVisualStyleBackColor = false;
+            this.btnRemoveImport.Click += new System.EventHandler(this.btnRemoveImport_Click);
             // 
             // ImportGoodInfoFrm
             // 
@@ -349,5 +367,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label txtStaff;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnRemoveImport;
     }
 }

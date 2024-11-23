@@ -86,12 +86,12 @@ namespace Views
                 txtAddress.Text = "";
         }
 
-        private string[] predefinedImagePaths = { "D:\\DH\\Kì 5\\LTTQ\\BTL\\QLShopThoiTrang\\images\\Avatars\\man.png", "D:\\DH\\Kì 5\\LTTQ\\BTL\\QLShopThoiTrang\\images\\Avatars\\woman.png" };
+        private string[] predefinedImagePaths = { "C:\\Users\\HOANG BAO\\source\\repos\\QLCH_ThoiTrang(GiaNhap)\\images\\Avatars\\man.png", "C:\\Users\\HOANG BAO\\source\\repos\\QLCH_ThoiTrang(GiaNhap)\\images\\Avatars\\woman.png" };
 
         private void btnAddAvatar_Click(object sender, EventArgs e)
         {
-            SelectImageFrm selectImageForm = new SelectImageFrm("D:\\DH\\Kì 5\\LTTQ\\BTL\\QLShopThoiTrang\\images\\Avatars\\man.png",
-                "D:\\DH\\Kì 5\\LTTQ\\BTL\\QLShopThoiTrang\\images\\Avatars\\woman.png");
+            SelectImageFrm selectImageForm = new SelectImageFrm("C:\\Users\\HOANG BAO\\source\\repos\\QLCH_ThoiTrang(GiaNhap)\\images\\Avatars\\man.png",
+                "C:\\Users\\HOANG BAO\\source\\repos\\QLCH_ThoiTrang(GiaNhap)\\images\\Avatars\\woman.png");
             selectImageForm.ShowDialog();
 
             string selectedImagePath = selectImageForm.GetSelectedImagePath();
@@ -166,7 +166,7 @@ namespace Views
             {
                 gender = comboGender.SelectedItem.ToString();
                 if (gender == "Nữ")
-                    avatarPath = "D:\\DH\\Kì 5\\LTTQ\\BTL\\QLShopThoiTrang\\images\\Avatars\\woman.png";
+                    avatarPath = "C:\\Users\\HOANG BAO\\source\\repos\\QLCH_ThoiTrang(GiaNhap)\\images\\Avatars\\woman.png";
             }
 
             if (success)

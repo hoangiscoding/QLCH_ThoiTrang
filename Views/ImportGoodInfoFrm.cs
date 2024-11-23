@@ -16,14 +16,13 @@ namespace Views
     public partial class ImportGoodInfoFrm : Form
     {
         private ImportGood importGood;
+        ImportGoodController importGoodController = new ImportGoodController();
         public ImportGoodInfoFrm(ImportGood import)
         {
             InitializeComponent();
             CenterToParent();
             importGood = import;
         }
-
-        
 
         public void InitializeEdit(ImportGood importGood)
         {
@@ -128,6 +127,29 @@ namespace Views
             else
             {
                 MessageBox.Show("Không đủ thông tin");
+            }
+        }
+
+        private void btnRemoveImport_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Bạn có chắc chắn muốn xoá?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                importGoodController.RemoveImportGood(importGood);
+
+                //remove khỏi flowpanel
+                // Tìm panel có ID trùng khớp
+                foreach (Control control in flowPanelImportGood.Controls)
+                {
+                    if (control is ItImportGoodInfo itImportGoodInfo && itImportGoodInfo.ImportGood.Id == importGood.Id)
+                    {
+                        flowPanelImportGood.Controls.Remove(control);
+
+                    }
+                }
+
+                MessageBox.Show("Xoá thành công");
+                this.Hide();
             }
         }
     }

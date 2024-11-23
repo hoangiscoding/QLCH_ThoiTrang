@@ -17,7 +17,7 @@ namespace Controllers
     }
     public class CommonController : ICommon
     {
-        private string connStr = "Data Source=LAPTOP-DNIFFA8V\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
+        private string connStr = "Data Source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
         //Load các username có trong hệ thống
         public List<String> LoadAllUsername()
         {
@@ -82,7 +82,7 @@ namespace Controllers
         }
         public string GetDefaultAvatarPath()
         {
-            return "D:\\DH\\Kì 5\\LTTQ\\BTL\\QLShopThoiTrang\\images\\Avatars\\man.png";
+            return "C:\\Users\\HOANG BAO\\source\\repos\\QLCH_ThoiTrang(GiaNhap)\\images\\Avatars\\man.png";
         }
     }
 }
