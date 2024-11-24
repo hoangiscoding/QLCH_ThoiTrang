@@ -56,7 +56,7 @@
             // 
             this.txtTotal.AutoSize = true;
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.txtTotal.ForeColor = System.Drawing.Color.White;
             this.txtTotal.Location = new System.Drawing.Point(706, 13);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(119, 30);
@@ -67,7 +67,7 @@
             // 
             this.txtQuantity.AutoSize = true;
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.txtQuantity.ForeColor = System.Drawing.Color.White;
             this.txtQuantity.Location = new System.Drawing.Point(580, 13);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(103, 30);
@@ -78,7 +78,7 @@
             // 
             this.txtProductSize.AutoSize = true;
             this.txtProductSize.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.txtProductSize.ForeColor = System.Drawing.Color.White;
             this.txtProductSize.Location = new System.Drawing.Point(403, 13);
             this.txtProductSize.Name = "txtProductSize";
             this.txtProductSize.Size = new System.Drawing.Size(52, 30);
@@ -89,7 +89,7 @@
             // 
             this.txtProductName.AutoSize = true;
             this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.txtProductName.ForeColor = System.Drawing.Color.White;
             this.txtProductName.Location = new System.Drawing.Point(164, 13);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(148, 30);
@@ -100,7 +100,7 @@
             // 
             this.txtProductId.AutoSize = true;
             this.txtProductId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
+            this.txtProductId.ForeColor = System.Drawing.Color.White;
             this.txtProductId.Location = new System.Drawing.Point(20, 13);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(75, 30);

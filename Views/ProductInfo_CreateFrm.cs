@@ -66,7 +66,8 @@ namespace Views
             else if (product.Type == "Áo") comboProductType.SelectedIndex = 1;
             else if (product.Type == "Nón") comboProductType.SelectedIndex = 2;
             else if (product.Type == "Giày") comboProductType.SelectedIndex = 3;
-            else if (product.Type == "Combo") comboProductType.SelectedIndex = 4;
+            else if (product.Type == "Váy") comboProductType.SelectedIndex = 4;
+            else if (product.Type == "Combo") comboProductType.SelectedIndex = 5;
 
             pictureProduct.ImageLocation = product.AvatarPath;
             avatarPath = product.AvatarPath;
@@ -141,6 +142,8 @@ namespace Views
             else if (comboProductType.SelectedIndex == 3)
                 type = "Giày";
             else if (comboProductType.SelectedIndex == 4)
+                type = "Váy";
+            else if (comboProductType.SelectedIndex == 5)
                 type = "Combo";
             else
                 success = false;
@@ -194,6 +197,8 @@ namespace Views
             else if (comboProductType.SelectedIndex == 3)
                 type = "Giày";
             else if (comboProductType.SelectedIndex == 4)
+                type = "Váy";
+            else if (comboProductType.SelectedIndex == 5)
                 type = "Combo";
             else
                 success = false;

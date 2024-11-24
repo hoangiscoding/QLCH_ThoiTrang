@@ -82,12 +82,12 @@ namespace Views
             {
                 //Bill chưa được tạo thì tiến hành tạo bill mới với các thông tin về giá  = 0
                 var success = true;
-                if (comboCustomer.SelectedIndex == -1)
+                if (comboCustomer.Text == "")
                 {
                     success = false;
                     MessageBox.Show("Vui lòng chọn thông tin khách hàng.");
                 }
-                if (comboProduct.SelectedIndex == -1)
+                if (comboProduct.Text == "")
                 {
                     success = false;
                     MessageBox.Show("Vui lòng chọn thông tin sản phẩm.");
@@ -135,6 +135,15 @@ namespace Views
         }
         private void BillUpdate()
         {
+            if (comboProduct.Text == "")
+            {
+                return;
+            }
+            if(txtQuantity.Text == "")
+            {
+                return;
+            }
+
             string productId = GetIdOfCombo(comboProduct.SelectedItem.ToString());
             int requiredQuantity = int.Parse(txtQuantity.Text);
             string billDetailId = txtBillId.Text;

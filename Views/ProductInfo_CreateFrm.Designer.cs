@@ -68,7 +68,7 @@
             this.panel1.Controls.Add(this.labelHeader);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 739);
+            this.panel1.Size = new System.Drawing.Size(1000, 711);
             this.panel1.TabIndex = 1;
             // 
             // btnExist
@@ -91,7 +91,7 @@
             this.btnRemoveProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnRemoveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveProduct.Location = new System.Drawing.Point(707, 659);
+            this.btnRemoveProduct.Location = new System.Drawing.Point(707, 642);
             this.btnRemoveProduct.Name = "btnRemoveProduct";
             this.btnRemoveProduct.Size = new System.Drawing.Size(261, 50);
             this.btnRemoveProduct.TabIndex = 12;
@@ -107,7 +107,7 @@
             this.btnAddEditProduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEditProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.btnAddEditProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEditProduct.Location = new System.Drawing.Point(402, 659);
+            this.btnAddEditProduct.Location = new System.Drawing.Point(402, 642);
             this.btnAddEditProduct.Name = "btnAddEditProduct";
             this.btnAddEditProduct.Size = new System.Drawing.Size(261, 50);
             this.btnAddEditProduct.TabIndex = 12;
@@ -201,6 +201,7 @@
             "Áo",
             "Nón",
             "Giày",
+            "Váy",
             "Combo"});
             this.comboProductType.Location = new System.Drawing.Point(18, 319);
             this.comboProductType.Name = "comboProductType";
@@ -322,7 +323,7 @@
             // 
             this.labelHeader.AutoSize = true;
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.ForeColor = System.Drawing.Color.White;
+            this.labelHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.labelHeader.Location = new System.Drawing.Point(502, 12);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(331, 54);
@@ -333,7 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 739);
+            this.ClientSize = new System.Drawing.Size(1000, 712);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
