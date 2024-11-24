@@ -39,6 +39,7 @@ namespace Views
             staffs = staffController.LoadAllStaff();
             btnCreateUpdate.Text = "THÊM MỚI";
             btnResetPassword.Visible = false;
+            btnDelete.Visible = false;
         }
         private void FillData(Staff staff)
         {
@@ -249,6 +250,7 @@ namespace Views
                     staffs.Remove(removeStaff);
                     ItPanelManage f = new ItPanelManage();
                     f.ItPanelManage_Load(this, null);
+                    MessageBox.Show("Không thể xoá quản lý", "Thông báo", MessageBoxButtons.OK);
                     this.Dispose();
                 }
             }

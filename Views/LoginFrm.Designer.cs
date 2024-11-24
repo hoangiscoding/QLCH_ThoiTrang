@@ -105,7 +105,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(22, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(494, 54);
+            this.label2.Size = new System.Drawing.Size(407, 45);
             this.label2.TabIndex = 2;
             this.label2.Text = "CỬA HÀNG THỜI TRANG";
             // 
@@ -116,7 +116,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(430, 54);
+            this.label1.Size = new System.Drawing.Size(356, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "PHẦN MỀM QUẢN LÝ";
             // 
@@ -138,7 +138,7 @@
             this.checkBoxManager.ForeColor = System.Drawing.Color.Black;
             this.checkBoxManager.Location = new System.Drawing.Point(21, 338);
             this.checkBoxManager.Name = "checkBoxManager";
-            this.checkBoxManager.Size = new System.Drawing.Size(144, 36);
+            this.checkBoxManager.Size = new System.Drawing.Size(120, 32);
             this.checkBoxManager.TabIndex = 3;
             this.checkBoxManager.Text = "QUẢN LÝ";
             this.checkBoxManager.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@
             this.txtForgetPassword.LinkColor = System.Drawing.Color.Black;
             this.txtForgetPassword.Location = new System.Drawing.Point(217, 466);
             this.txtForgetPassword.Name = "txtForgetPassword";
-            this.txtForgetPassword.Size = new System.Drawing.Size(217, 32);
+            this.txtForgetPassword.Size = new System.Drawing.Size(181, 28);
             this.txtForgetPassword.TabIndex = 7;
             this.txtForgetPassword.TabStop = true;
             this.txtForgetPassword.Text = "QUÊN MẬT KHẨU";
@@ -165,7 +165,7 @@
             this.txtRegister.LinkColor = System.Drawing.Color.Black;
             this.txtRegister.Location = new System.Drawing.Point(17, 466);
             this.txtRegister.Name = "txtRegister";
-            this.txtRegister.Size = new System.Drawing.Size(123, 32);
+            this.txtRegister.Size = new System.Drawing.Size(102, 28);
             this.txtRegister.TabIndex = 6;
             this.txtRegister.TabStop = true;
             this.txtRegister.Text = "ĐĂNG KÝ";
@@ -190,7 +190,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtPassword.Location = new System.Drawing.Point(30, 20);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(306, 32);
+            this.txtPassword.Size = new System.Drawing.Size(306, 27);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "MẬT KHẨU:";
             this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
@@ -202,7 +202,7 @@
             this.checkBoxShowPassword.ForeColor = System.Drawing.Color.Black;
             this.checkBoxShowPassword.Location = new System.Drawing.Point(192, 338);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(234, 36);
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(195, 32);
             this.checkBoxShowPassword.TabIndex = 4;
             this.checkBoxShowPassword.Text = "HIỆN MẬT KHẨU";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
@@ -242,7 +242,7 @@
             this.txtAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.txtAccount.Location = new System.Drawing.Point(30, 20);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(306, 32);
+            this.txtAccount.Size = new System.Drawing.Size(306, 27);
             this.txtAccount.TabIndex = 1;
             this.txtAccount.Text = "TÊN ĐĂNG NHẬP:";
             this.txtAccount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAccount_MouseClick);
@@ -254,7 +254,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(42, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 54);
+            this.label4.Size = new System.Drawing.Size(146, 45);
             this.label4.TabIndex = 4;
             this.label4.Text = "TRỞ LẠI";
             // 
@@ -265,7 +265,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(42, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 54);
+            this.label3.Size = new System.Drawing.Size(230, 45);
             this.label3.TabIndex = 3;
             this.label3.Text = "CHÀO MỪNG";
             // 
@@ -295,7 +295,7 @@
             // 
             // LoginFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 612);
             this.Controls.Add(this.splitContainer1);

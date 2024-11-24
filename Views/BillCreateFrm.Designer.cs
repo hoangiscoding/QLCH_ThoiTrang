@@ -529,9 +529,9 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(20, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 23);
+            this.label5.Size = new System.Drawing.Size(165, 23);
             this.label5.TabIndex = 9;
-            this.label5.Text = "SĐT KH";
+            this.label5.Text = "SỐ ĐIỆN THOẠI KH";
             // 
             // comboCustomer
             // 
