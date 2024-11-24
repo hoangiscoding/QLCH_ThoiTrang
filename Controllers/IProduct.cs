@@ -33,7 +33,7 @@ namespace Controllers
     }
     public class ProductController : IProduct
     {
-        private string connStr = "Data Source=LAPTOP-HBN2311\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
+        private string connStr = "Data Source=LAPTOP-DNIFFA8V\\SQLEXPRESS;Initial Catalog=HatiShop;Integrated Security=True";
         public int GetCurrId(List<Product> products)
         {
             if (products.Count == 0)

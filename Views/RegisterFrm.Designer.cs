@@ -119,7 +119,7 @@
             "Nữ"});
             this.comboGender.Location = new System.Drawing.Point(10, 7);
             this.comboGender.Name = "comboGender";
-            this.comboGender.Size = new System.Drawing.Size(273, 36);
+            this.comboGender.Size = new System.Drawing.Size(273, 31);
             this.comboGender.TabIndex = 4;
             this.comboGender.Text = "Giới tính:";
             // 
@@ -144,7 +144,7 @@
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Gray;
             this.txtPhoneNumber.Location = new System.Drawing.Point(10, 10);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(263, 29);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(263, 24);
             this.txtPhoneNumber.TabIndex = 6;
             this.txtPhoneNumber.Text = "Số điện thoại:";
             this.txtPhoneNumber.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPhoneNumber_MouseClick);
@@ -158,7 +158,7 @@
             this.textBox3.ForeColor = System.Drawing.Color.Gray;
             this.textBox3.Location = new System.Drawing.Point(10, 10);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(263, 29);
+            this.textBox3.Size = new System.Drawing.Size(263, 24);
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = "Số điện thoại:";
             // 
@@ -171,7 +171,7 @@
             this.textBox6.ForeColor = System.Drawing.Color.Gray;
             this.textBox6.Location = new System.Drawing.Point(10, 10);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(263, 29);
+            this.textBox6.Size = new System.Drawing.Size(263, 24);
             this.textBox6.TabIndex = 5;
             this.textBox6.Text = "Số điện thoại:";
             // 
@@ -194,7 +194,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.Location = new System.Drawing.Point(10, 10);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(559, 29);
+            this.txtEmail.Size = new System.Drawing.Size(559, 24);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Text = "Email:";
             this.txtEmail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEmail_MouseClick);
@@ -218,7 +218,7 @@
             this.txtAddress.ForeColor = System.Drawing.Color.Gray;
             this.txtAddress.Location = new System.Drawing.Point(10, 10);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(559, 29);
+            this.txtAddress.Size = new System.Drawing.Size(559, 24);
             this.txtAddress.TabIndex = 8;
             this.txtAddress.Text = "Địa chỉ:";
             this.txtAddress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAddress_MouseClick);
@@ -243,7 +243,7 @@
             this.dateTimePickerBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerBirthDate.Location = new System.Drawing.Point(107, 10);
             this.dateTimePickerBirthDate.Name = "dateTimePickerBirthDate";
-            this.dateTimePickerBirthDate.Size = new System.Drawing.Size(176, 35);
+            this.dateTimePickerBirthDate.Size = new System.Drawing.Size(176, 30);
             this.dateTimePickerBirthDate.TabIndex = 5;
             // 
             // label2
@@ -253,7 +253,7 @@
             this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(6, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 30);
+            this.label2.Size = new System.Drawing.Size(94, 23);
             this.label2.TabIndex = 6;
             this.label2.Text = "Ngày sinh:";
             // 
@@ -276,7 +276,7 @@
             this.txtFullName.ForeColor = System.Drawing.Color.Gray;
             this.txtFullName.Location = new System.Drawing.Point(10, 10);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(263, 29);
+            this.txtFullName.Size = new System.Drawing.Size(263, 24);
             this.txtFullName.TabIndex = 3;
             this.txtFullName.Text = "Họ và tên:";
             this.txtFullName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtFullName_MouseClick);
@@ -300,7 +300,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword.Location = new System.Drawing.Point(10, 10);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(263, 29);
+            this.txtPassword.Size = new System.Drawing.Size(263, 24);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Mật khẩu:";
             this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
@@ -324,7 +324,7 @@
             this.txtAccount.ForeColor = System.Drawing.Color.Gray;
             this.txtAccount.Location = new System.Drawing.Point(10, 10);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(263, 29);
+            this.txtAccount.Size = new System.Drawing.Size(263, 24);
             this.txtAccount.TabIndex = 1;
             this.txtAccount.Text = "Tên đăng nhập:";
             this.txtAccount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAccount_MouseClick);
@@ -380,7 +380,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(236)))), ((int)(((byte)(206)))));
             this.label1.Location = new System.Drawing.Point(494, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 54);
+            this.label1.Size = new System.Drawing.Size(166, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "ĐĂNG KÝ";
             // 
@@ -396,7 +396,7 @@
             // 
             // RegisterFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 597);
             this.Controls.Add(this.panel1);
