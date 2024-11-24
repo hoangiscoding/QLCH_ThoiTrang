@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRemoveImport = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnExist = new System.Windows.Forms.Button();
             this.flowPanelImportGood = new System.Windows.Forms.FlowLayoutPanel();
@@ -50,7 +51,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRemoveImport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +73,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 573);
             this.panel1.TabIndex = 1;
+            // 
+            // btnRemoveImport
+            // 
+            this.btnRemoveImport.BackColor = System.Drawing.Color.White;
+            this.btnRemoveImport.FlatAppearance.BorderSize = 0;
+            this.btnRemoveImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveImport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
+            this.btnRemoveImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveImport.Location = new System.Drawing.Point(402, 502);
+            this.btnRemoveImport.Name = "btnRemoveImport";
+            this.btnRemoveImport.Size = new System.Drawing.Size(180, 50);
+            this.btnRemoveImport.TabIndex = 13;
+            this.btnRemoveImport.Text = "XÓA";
+            this.btnRemoveImport.UseVisualStyleBackColor = false;
+            this.btnRemoveImport.Click += new System.EventHandler(this.btnRemoveImport_Click);
             // 
             // btnPrint
             // 
@@ -292,28 +308,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
             this.label1.Location = new System.Drawing.Point(337, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(356, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "PHIẾU NHẬP HÀNG";
-            // 
-            // btnRemoveImport
-            // 
-            this.btnRemoveImport.BackColor = System.Drawing.Color.White;
-            this.btnRemoveImport.FlatAppearance.BorderSize = 0;
-            this.btnRemoveImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveImport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(54)))));
-            this.btnRemoveImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveImport.Location = new System.Drawing.Point(402, 502);
-            this.btnRemoveImport.Name = "btnRemoveImport";
-            this.btnRemoveImport.Size = new System.Drawing.Size(180, 50);
-            this.btnRemoveImport.TabIndex = 13;
-            this.btnRemoveImport.Text = "XÓA";
-            this.btnRemoveImport.UseVisualStyleBackColor = false;
-            this.btnRemoveImport.Click += new System.EventHandler(this.btnRemoveImport_Click);
             // 
             // ImportGoodInfoFrm
             // 
