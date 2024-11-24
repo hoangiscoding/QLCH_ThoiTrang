@@ -124,11 +124,10 @@ namespace Views
 
                     Bill bill = new Bill(billId, customer, staff, creationTime, discountAmount, originalAmount, discountAmount);
                     billController.CreateNewBill(bill);
+                    customer.SetRank();
+                    //Gọi update bill
+                    BillUpdate();
                 }
-
-                customer.SetRank();
-                //Gọi update bill
-                BillUpdate();
 
             }
 
@@ -275,7 +274,7 @@ namespace Views
         {
             if (billDetails.Count > 0)
             {
-                var msg = "Hóa đơn chưa được thanh toán. Bạn có muốn hoàn tác các thay đổi?";
+                var msg = "Hóa đơn chưa được thanh toán. Bạn có muốn thoát?";
                 var caption = "Cảnh báo";
                 var result = MessageBox.Show(msg, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -286,10 +285,22 @@ namespace Views
                         product = productController.FindProductById(products, billDetail.Product.Id);
                         product.Quantity += billDetail.Quantity;
                         productController.UpdateProduct(product);
+                        billController.RemoveBillDetail(billDetail);
                     }
+                    
+                    this.Dispose();
                 }
             }
-            this.Dispose();
+            else
+            {
+                var msg = "Bạn có muốn thoát?";
+                var caption = "Cảnh báo";
+                var result = MessageBox.Show(msg, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Dispose();
+                }
+            }
         }
         private void BillCreateFrm_Load(object sender, EventArgs e)
         {
@@ -543,6 +554,11 @@ namespace Views
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+            if (comboCustomer.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn thông tin khách hàng.");
+                return;
+            }
             if (billDetails.Count == 0)
             {
                 MessageBox.Show("Hóa đơn không có sản phẩm. Vui lòng thêm sản phẩm trước khi thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

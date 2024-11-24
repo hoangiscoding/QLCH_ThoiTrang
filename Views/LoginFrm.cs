@@ -101,6 +101,7 @@ namespace Views
                         // Mở HomeFrm
                         HomeFrm homeForm = new HomeFrm(staff);
                         homeForm.Show();
+                        ResetForm();
 
                         // Ẩn LoginFrm
                         this.Hide();

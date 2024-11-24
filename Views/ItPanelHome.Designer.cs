@@ -42,7 +42,7 @@
             this.panelHome.Location = new System.Drawing.Point(0, 0);
             this.panelHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelHome.Name = "panelHome";
-            this.panelHome.Size = new System.Drawing.Size(810, 789);
+            this.panelHome.Size = new System.Drawing.Size(810, 832);
             this.panelHome.TabIndex = 22;
             // 
             // pictureBox1
@@ -50,7 +50,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(804, 783);
+            this.pictureBox1.Size = new System.Drawing.Size(804, 778);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 793);
+            this.ClientSize = new System.Drawing.Size(810, 831);
             this.Controls.Add(this.panelHome);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

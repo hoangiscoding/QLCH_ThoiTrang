@@ -59,7 +59,7 @@
             this.panelProduct.Controls.Add(this.label3);
             this.panelProduct.Location = new System.Drawing.Point(0, 0);
             this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(816, 789);
+            this.panelProduct.Size = new System.Drawing.Size(820, 818);
             this.panelProduct.TabIndex = 24;
             // 
             // panel1
@@ -82,7 +82,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label6.Location = new System.Drawing.Point(512, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 32);
+            this.label6.Size = new System.Drawing.Size(78, 28);
             this.label6.TabIndex = 3;
             this.label6.Text = "Địa chỉ";
             // 
@@ -93,7 +93,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label5.Location = new System.Drawing.Point(323, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 32);
+            this.label5.Size = new System.Drawing.Size(138, 28);
             this.label5.TabIndex = 2;
             this.label5.Text = "Số điện thoại";
             // 
@@ -104,7 +104,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label1.Location = new System.Drawing.Point(111, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 32);
+            this.label1.Size = new System.Drawing.Size(79, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên KH";
             // 
@@ -115,7 +115,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(54)))));
             this.label2.Location = new System.Drawing.Point(14, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 32);
+            this.label2.Size = new System.Drawing.Size(76, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã KH";
             // 
@@ -124,7 +124,7 @@
             this.flowPanelCustomer.AutoScroll = true;
             this.flowPanelCustomer.Location = new System.Drawing.Point(4, 248);
             this.flowPanelCustomer.Name = "flowPanelCustomer";
-            this.flowPanelCustomer.Size = new System.Drawing.Size(806, 526);
+            this.flowPanelCustomer.Size = new System.Drawing.Size(806, 567);
             this.flowPanelCustomer.TabIndex = 23;
             // 
             // btnCustomerCreate
@@ -162,7 +162,7 @@
             this.txtCustomerFind.ForeColor = System.Drawing.Color.Gray;
             this.txtCustomerFind.Location = new System.Drawing.Point(20, 20);
             this.txtCustomerFind.Name = "txtCustomerFind";
-            this.txtCustomerFind.Size = new System.Drawing.Size(330, 37);
+            this.txtCustomerFind.Size = new System.Drawing.Size(330, 31);
             this.txtCustomerFind.TabIndex = 5;
             this.txtCustomerFind.Text = "Tìm kiếm:";
             this.txtCustomerFind.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCustomerFind_MouseClick);
@@ -187,7 +187,7 @@
             "Sđt"});
             this.comboCustomerFind.Location = new System.Drawing.Point(6, 31);
             this.comboCustomerFind.Name = "comboCustomerFind";
-            this.comboCustomerFind.Size = new System.Drawing.Size(252, 36);
+            this.comboCustomerFind.Size = new System.Drawing.Size(252, 31);
             this.comboCustomerFind.TabIndex = 1;
             // 
             // label4
@@ -197,7 +197,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 30);
+            this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tìm kiếm:";
             // 
@@ -208,15 +208,15 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
             this.label3.Location = new System.Drawing.Point(4, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(294, 54);
+            this.label3.Size = new System.Drawing.Size(241, 45);
             this.label3.TabIndex = 0;
             this.label3.Text = "KHÁCH HÀNG";
             // 
             // ItPanelCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 789);
+            this.ClientSize = new System.Drawing.Size(819, 818);
             this.Controls.Add(this.panelProduct);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

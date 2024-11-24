@@ -57,7 +57,7 @@
             this.panelProduct.Controls.Add(this.label3);
             this.panelProduct.Location = new System.Drawing.Point(0, 0);
             this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(814, 703);
+            this.panelProduct.Size = new System.Drawing.Size(814, 787);
             this.panelProduct.TabIndex = 23;
             // 
             // panel5
@@ -81,7 +81,7 @@
             "Sắp xếp theo tên SP A-Z"});
             this.comboFilter.Location = new System.Drawing.Point(6, 31);
             this.comboFilter.Name = "comboFilter";
-            this.comboFilter.Size = new System.Drawing.Size(180, 36);
+            this.comboFilter.Size = new System.Drawing.Size(180, 31);
             this.comboFilter.TabIndex = 1;
             this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
             // 
@@ -91,7 +91,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(3, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 30);
+            this.label5.Size = new System.Drawing.Size(57, 23);
             this.label5.TabIndex = 0;
             this.label5.Text = "Bộ lọc";
             // 
@@ -100,7 +100,7 @@
             this.flowPanelProduct.AutoScroll = true;
             this.flowPanelProduct.Location = new System.Drawing.Point(0, 181);
             this.flowPanelProduct.Name = "flowPanelProduct";
-            this.flowPanelProduct.Size = new System.Drawing.Size(810, 519);
+            this.flowPanelProduct.Size = new System.Drawing.Size(810, 603);
             this.flowPanelProduct.TabIndex = 23;
             // 
             // btnProductCreate
@@ -138,7 +138,7 @@
             this.txtProductFind.ForeColor = System.Drawing.Color.Gray;
             this.txtProductFind.Location = new System.Drawing.Point(20, 20);
             this.txtProductFind.Name = "txtProductFind";
-            this.txtProductFind.Size = new System.Drawing.Size(225, 37);
+            this.txtProductFind.Size = new System.Drawing.Size(225, 31);
             this.txtProductFind.TabIndex = 5;
             this.txtProductFind.Text = "Tìm kiếm:";
             this.txtProductFind.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtProductFind_MouseClick);
@@ -162,7 +162,7 @@
             "Theo tên SP"});
             this.comboProductFind.Location = new System.Drawing.Point(8, 31);
             this.comboProductFind.Name = "comboProductFind";
-            this.comboProductFind.Size = new System.Drawing.Size(159, 36);
+            this.comboProductFind.Size = new System.Drawing.Size(159, 31);
             this.comboProductFind.TabIndex = 1;
             // 
             // label4
@@ -172,7 +172,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(4, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 30);
+            this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tìm kiếm:";
             // 
@@ -183,13 +183,13 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(240)))));
             this.label3.Location = new System.Drawing.Point(4, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 54);
+            this.label3.Size = new System.Drawing.Size(197, 45);
             this.label3.TabIndex = 0;
             this.label3.Text = "SẢN PHẨM";
             // 
             // ItPanelProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 785);
             this.Controls.Add(this.panelProduct);
